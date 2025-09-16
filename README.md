@@ -1,4 +1,4 @@
-# 📒 Chuleta Markdown para GitHub
+# 📒 Sintaxis de escritura y formato básicos
 
 ## 🔹 Encabezados
 ```markdown
