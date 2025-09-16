@@ -10,7 +10,7 @@ La **Intel·ligència Artificial (IA)** és una branca de la informàtica que se
 
 La IA funciona mitjançant algoritmes i models matemàtics que permeten a les màquines aprendre de dades i experiències prèvies, adaptar-se a noves situacions i prendre decisions de manera autònoma.
 
-![Diagrama de funcionament de la IA](https://upload.wikimedia.org/wikipedia/commons/8/87/Artificial_Intelligence_Infographic.png)
+![Diagrama de funcionament de la IA](https://cdn.pixabay.com/photo/2017/03/27/14/56/artificial-intelligence-2172756_1280.jpg)
 
 ---
 
@@ -19,7 +19,7 @@ La IA funciona mitjançant algoritmes i models matemàtics que permeten a les m�
 1. **IA feble o estreta**: Dissenyada per realitzar una tasca específica (per exemple, assistents virtuals).
 2. **IA forta o general**: Capaç de realitzar qualsevol tasca cognitiva humana (encara en desenvolupament).
 
-![Tipus d'IA](https://upload.wikimedia.org/wikipedia/commons/1/17/Artificial_intelligence_types.png)
+![Tipus d'IA](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Types_of_Artificial_Intelligence.png/512px-Types_of_Artificial_Intelligence.png)
 
 ---
 
@@ -30,7 +30,7 @@ La IA funciona mitjançant algoritmes i models matemàtics que permeten a les m�
 - Diagnòstic mèdic assistit per ordinador
 - Vehicles autònoms
 
-![Aplicacions de la IA](https://cdn.pixabay.com/photo/2022/03/15/16/43/artificial-intelligence-7068772_1280.jpg)
+![Aplicacions de la IA](https://cdn.pixabay.com/photo/2016/10/18/21/22/robot-1752643_1280.png)
 
 ---
 
