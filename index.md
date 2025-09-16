@@ -14,7 +14,7 @@ Este repositorio contiene el material del curso de Machine Learning desarrollado
 
 ### [Sprint 1: Instal.lacio i Configuracio Inicial](SP1/sp1.md)
 ### [Sprint 2: Instal.lacio, Configuracio de Programari de Base i Gestio de fitxers](SP2/sp2.md)
-### [Sprint 3: Administració de Dominis i Seguretat](SP3/SP3.md)
+### [Sprint 3: Administració de Dominis i Seguretat](SP3/SP3.MD)
 ### [Sprint 4: Configuració del Programari de Base i Sistemes d’Emmagatzematge en Ubuntu](SP4/sp4.md)
 ### [Sprint 5: Monitoratge, Auditories i Programari Client/Servidor](SP5/sp5.md)
 ### [Relación entre Unidades y Resultados de Aprendizaje (RAs)](ras.md) 
