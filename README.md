@@ -1,58 +1,205 @@
-## QUI SOC?
+# 📒 Chuleta Markdown para GitHub
 
-SOC RAMON I TINC 19 ANYS
+## 🔹 Encabezados
+```markdown
+# Título 1
+## Título 2
+### Título 3
+#### Título 4
+##### Título 5
+###### Título 6
+```
 
-![AAAABSB8FeCrMkkk2J7d9nDIvMTjqYtb7u4YPMpMTPEt8k6ndjIoIVPv4NP-lK2bNVA69xdG1J588UTbp--GHkVWKISCsTM0vFLB4CcdXF0OikojrZ4LQetWjBntog](https://github.com/user-attachments/assets/a2f32db8-338c-4b08-9464-31115b6001d5)
+# Título 1  
+## Título 2  
+### Título 3  
+#### Título 4  
+##### Título 5  
+###### Título 6  
 
-© 2025 RAMON RODA
+---
 
-## Sintaxi d'escriptura i format bàsics
+## 🔹 Estilos de texto
+```markdown
+**Negrita**
+*Cursiva*
+***Negrita y cursiva***
+~~Tachado~~
+<u>Subrayado</u>   <!-- solo con HTML -->
+<sup>Superíndice</sup>
+<sub>Subíndice</sub>
+```
 
-- **Texto en negrita**
-__También funciona así__
+**Negrita**  
+*Cursiva*  
+***Negrita y cursiva***  
+~~Tachado~~  
+<u>Subrayado</u>  
+X<sup>2</sup> → Superíndice  
+H<sub>2</sub>O → Subíndice  
 
-- *Texto en cursiva*
- _También funciona así_
+---
 
-- ***Texto en negrita y cursiva***
+## 🔹 Listas
 
-- ~~Texto tachado~~
+### Lista ordenada
+```markdown
+1. Elemento 1
+2. Elemento 2
+   1. Sub-elemento
+```
 
-- <u>Texto subrayado</u>
+1. Elemento 1  
+2. Elemento 2  
+   1. Sub-elemento  
 
-- # Título 1
-- ## Título 2
-- ### Título 3
-
-**- Elemento 1
-- Elemento 2
+### Lista desordenada
+```markdown
+- Elemento A
+- Elemento B
   - Sub-elemento
-**
-- > Esto es una cita
+```
 
-- Enllaç: [Texto del enlace](https://github.com)
+- Elemento A  
+- Elemento B  
+  - Sub-elemento  
 
-- imatge: ![Texto alternativo](https://picsum.photos/200)
+---
 
-- Taula:
+## 🔹 Citas
+```markdown
+> Esto es una cita
+>> Cita anidada
+```
+
+> Esto es una cita  
+>> Cita anidada  
+
+---
+
+## 🔹 Código
+```markdown
+`código en línea`
+
+\`\`\`bash
+# bloque de código con lenguaje
+echo "hola"
+\`\`\`
+```
+
+`código en línea`  
+
+```bash
+# bloque de código con lenguaje
+echo "hola"
+```
+
+---
+
+## 🔹 Enlaces
+```markdown
+[Texto del enlace](https://github.com)
+```
+
+[Texto del enlace](https://github.com)
+
+---
+
+## 🔹 Imágenes
+```markdown
+![Texto alternativo](https://picsum.photos/200)
+```
+
+![Texto alternativo](https://picsum.photos/200)
+
+---
+
+## 🔹 Tablas
+```markdown
+| Columna 1 | Columna 2 | Columna 3 |
+|-----------|-----------|-----------|
+| Texto A   | Texto B   | Texto C   |
+| Texto D   | Texto E   | Texto F   |
+```
 
 | Columna 1 | Columna 2 | Columna 3 |
 |-----------|-----------|-----------|
 | Texto A   | Texto B   | Texto C   |
 | Texto D   | Texto E   | Texto F   |
 
-- llistat de tasques:
+---
 
+## 🔹 Separador
+```markdown
+---
+```
+
+---
+
+---
+
+## 🔹 Listas de tareas (checklist)
+```markdown
 - [x] Tarea hecha
 - [ ] Tarea pendiente
+```
 
-- emojis: :smile: :rocket: :+1:
+- [x] Tarea hecha  
+- [ ] Tarea pendiente  
 
-- text centrat:
+---
 
-<p align="center">En diferentes contextos se pueden escribir cartas a instituciones, organizaciones y personas. En cualquier caso, la estructura debe ser coherente para que el destinatario entienda su contenido. La etapa final de la carta es muy importante, te permite expresar tu intención y si necesitas una respuesta. Por tal razón, es necesario comprender cómo terminar una carta.</p>
+## 🔹 Emojis
+Usa `:nombre:` → [Lista oficial aquí](https://github.com/ikatyang/emoji-cheat-sheet)  
 
+Ejemplo:
+```markdown
+:smile: :rocket: :+1:
+```
 
-```bash
-# bloque de código con lenguaje
-echo "hola"
+😄 🚀 👍  
+
+---
+
+## 🔹 HTML extra (soportado en GitHub)
+```markdown
+<u>Subrayado</u>
+<span style="color:red">Texto rojo</span>
+<p align="center">Texto centrado</p>
+```
+
+<u>Subrayado</u>  
+<span style="color:red">Texto rojo</span>  
+<p align="center">Texto centrado</p>  
+
+---
+
+## 🔹 Detalles desplegables
+```markdown
+<details>
+  <summary>Haz clic aquí</summary>
+  Texto oculto dentro del desplegable.
+</details>
+```
+
+<details>
+  <summary>Haz clic aquí</summary>
+  Texto oculto dentro del desplegable.
+</details>
+
+---
+
+## 🔹 Diagramas (Mermaid en GitHub)
+```markdown
+\`\`\`mermaid
+graph TD;
+    A[Inicio] --> B[Proceso];
+    B --> C[Fin];
+\`\`\`
+```
+
+```mermaid
+graph TD;
+    A[Inicio] --> B[Proceso];
+    B --> C[Fin];
+```
