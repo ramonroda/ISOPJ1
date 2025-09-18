@@ -23,9 +23,16 @@ maquina virtual, amb el meu cas "Ubuntu 22.04" tal com es veu a la imatge i pols
 - Abans d'iniciar la maquina, hem de posar la iso amb el sistema operatiu, anem a parametres de la maquina i a "Emmagatzematge", premem on es veu a la image i la afegim:
 <img width="875" height="541" alt="image" src="https://github.com/user-attachments/assets/d8268c87-6607-46b1-95b8-32c8d55c7246" />
 
-- I a xarxa. posem xarxa nat, ja que 
+- I a xarxa, posem xarxa nat, ja que Les màquines virtuals dins de la mateixa xarxa NAT poden connectar-se entre elles i igual que amb nat, te sortida a internet
 - Iniciem la maquina:
 <img width="383" height="89" alt="image" src="https://github.com/user-attachments/assets/bc058112-80d2-422d-8f53-64a937cf4bea" />
+
+---
+
+### Particions
+- Per a l'apartat de particions, he creat les particions normals (/home, /boot, /) i /swap, perque com tenim 4gb de RAM, si es plena, el sistema pot utilitzar la partició
+swap com a memòria extra, quedaria aixi (he posat un terminal per que veigues que la captura es feta per mi):
+<img width="821" height="639" alt="image" src="https://github.com/user-attachments/assets/06594374-441c-4c0a-a89a-60bccf05ba70" />
 
 
 
