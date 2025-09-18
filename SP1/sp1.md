@@ -24,6 +24,9 @@ maquina virtual, amb el meu cas "Ubuntu 22.04" tal com es veu a la imatge i pols
 <img width="875" height="541" alt="image" src="https://github.com/user-attachments/assets/d8268c87-6607-46b1-95b8-32c8d55c7246" />
 
 - I a xarxa, posem xarxa nat, ja que Les màquines virtuals dins de la mateixa xarxa NAT poden connectar-se entre elles i igual que amb nat, te sortida a internet
+<img width="872" height="546" alt="image" src="https://github.com/user-attachments/assets/973b28f5-66c3-4437-ac35-c54d8b429beb" />
+
+
 - Iniciem la maquina:
 <img width="383" height="89" alt="image" src="https://github.com/user-attachments/assets/bc058112-80d2-422d-8f53-64a937cf4bea" />
 
@@ -37,6 +40,14 @@ swap com a memòria extra, quedaria aixi (he posat un terminal per que veigues q
 
 
 ## Llicenciament
+- Ubuntu com a tal utilitza la "GNU GPLv2" per al seu nucli i a la majoria de les seues aplicacions, pero Ubuntu es una distribució de GNU/Linux, i no té una sola
+  llicència, sinó una combinació de llicències de programari lliure i codi obert com ara GPL, LGPL, MIT... Aquesta llicència asegura que el codi sigui lliure i que qualsevol
+  modificació també te de ser lliure.
+  <img width="357" height="200" alt="image" src="https://github.com/user-attachments/assets/1170e64e-5fe9-4ded-b0e5-fd0c5cfd46c1" /> <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/0e431ffd-b61c-4b5b-8823-c3c653192151" /> <img width="357" height="200" alt="image" src="https://github.com/user-attachments/assets/b4edc107-2e67-4478-a2b0-2c7d1f198da8" />
+
+
+
+
 ## Gestors d'arrencada per a instal.lacions DUALS
 ## Punts de restauracio
 ## Configuracio de la xarxa
