@@ -8,15 +8,12 @@ title: "Sprint 1: Instal.lacio i Configuracio Inicial"
 #### Pas 1
 - Primerament obrirem Virtualbox i polsarem a "nova", seguidament ens obrira una pagina on aurem de posar-li un nom a la 
 maquina virtual, amb el meu cas "Ubuntu 22.04" tal com es veu a la imatge i polsarem "Endavant":
-
 <img width="858" height="469" alt="image" src="https://github.com/user-attachments/assets/34006d87-4824-4670-8bee-d6d257101e67" />
 
 - Escollim la RAM i nuclis de CPU que volem per la maquina:
-
 <img width="861" height="467" alt="image" src="https://github.com/user-attachments/assets/27d3addf-aa48-43fd-b1f6-b2658fb9f5f6" />
 
 - Escollim l'espai que volem assignar al disc dur de la maquina, polsarem "Endavan" i "Finish":
-
 <img width="726" height="443" alt="image" src="https://github.com/user-attachments/assets/fc3b42c9-8e00-4f87-9073-057c0d043a6c" />
 
 #### Pas 2 
@@ -43,20 +40,19 @@ swap com a memòria extra, quedaria aixi (he posat un terminal per que veigues q
 - Ubuntu com a tal utilitza la "GNU GPLv2" per al seu nucli i a la majoria de les seues aplicacions, pero Ubuntu es una distribució de GNU/Linux, i no té una sola
   llicència, sinó una combinació de llicències de programari lliure i codi obert com ara GPL, LGPL, MIT... Aquesta llicència asegura que el codi sigui lliure i que qualsevol
   modificació també te de ser lliure.
-  
+ 
   <img width="357" height="200" alt="image" src="https://github.com/user-attachments/assets/1170e64e-5fe9-4ded-b0e5-fd0c5cfd46c1" /> <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/0e431ffd-b61c-4b5b-8823-c3c653192151" /> <img width="357" height="200" alt="image" src="https://github.com/user-attachments/assets/b4edc107-2e67-4478-a2b0-2c7d1f198da8" />
 
 
 
 
 ## Gestors d'arrencada per a instal.lacions DUALS
-#### Pas 1
 - A la maquina virtual, activem la seguent opcio:
 <img width="877" height="579" alt="image" src="https://github.com/user-attachments/assets/3abcf2cd-9d14-4580-a41a-5f60ca00b557" />
 
 - Posem la ISo de Windows i arranquem fins arribar aqui:
-  <img width="595" height="254" alt="image" src="https://github.com/user-attachments/assets/103597d2-c02d-4225-9610-cb2b2cb441e4" />
-  <img width="639" height="306" alt="image" src="https://github.com/user-attachments/assets/f6586b35-be7b-43e8-925d-b035614ba9b9" />
+<img width="595" height="254" alt="image" src="https://github.com/user-attachments/assets/103597d2-c02d-4225-9610-cb2b2cb441e4" />
+<img width="639" height="306" alt="image" src="https://github.com/user-attachments/assets/f6586b35-be7b-43e8-925d-b035614ba9b9" />
 
 - Instalem Windows a la particio lliure:
 <img width="642" height="474" alt="image" src="https://github.com/user-attachments/assets/c1fac733-d1d9-4f22-bffd-19780207e716" />
@@ -72,7 +68,7 @@ swap com a memòria extra, quedaria aixi (he posat un terminal per que veigues q
 <img width="463" height="253" alt="image" src="https://github.com/user-attachments/assets/12e1d3ef-9b08-4e02-946f-efdcff2f0886" />
   
 - Entrem al boot menu de vbox
- <img width="622" height="316" alt="image" src="https://github.com/user-attachments/assets/3630cc08-41c2-4057-a697-1665c3f871ea" />
+<img width="622" height="316" alt="image" src="https://github.com/user-attachments/assets/3630cc08-41c2-4057-a697-1665c3f871ea" />
 
 - Seleccionem "detect and show boot methods":
 <img width="475" height="232" alt="image" src="https://github.com/user-attachments/assets/0fc802dc-88d6-472a-acd5-6d6621441f27" />
@@ -123,4 +119,17 @@ swap com a memòria extra, quedaria aixi (he posat un terminal per que veigues q
 <img width="536" height="74" alt="16" src="https://github.com/user-attachments/assets/8c613f4b-f346-4866-906e-8c8250bc953b" />
 
 ## Configuracio de la xarxa
+- fem ip a per veure la nostra ip:
+<img width="936" height="230" alt="image" src="https://github.com/user-attachments/assets/95b4ed06-e3d9-4fcd-a82a-e4fb02c2dc73" />
+
+- Assignem IP, mascara, gateway i dns manualment per interficie grafica, i comprovarem que funciona fen un ping a google:
+<img width="590" height="480" alt="image" src="https://github.com/user-attachments/assets/1187e31f-7950-47a1-a07a-5899e9c0096a" />
+<img width="723" height="257" alt="image" src="https://github.com/user-attachments/assets/80088f52-44ed-4298-8136-5840deaf3769" />
+
+- Ara farem el mateix per terminal amb netplan, editem el fitcher "etc/ntplan/tabulem" i posem el seguent:
+<img width="393" height="304" alt="18" src="https://github.com/user-attachments/assets/2a709fa0-d76e-4224-848b-d6828ab9bec2" />
+
+- Apliquem i comprovem:
+<img width="808" height="328" alt="image" src="https://github.com/user-attachments/assets/c30c2bae-6831-42e8-86ae-97ddef0535db" />
+
 ## Comandes generals i instal.lacions
