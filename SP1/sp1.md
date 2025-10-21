@@ -133,3 +133,13 @@ swap com a memòria extra, quedaria aixi (he posat un terminal per que veigues q
 <img width="808" height="328" alt="image" src="https://github.com/user-attachments/assets/c30c2bae-6831-42e8-86ae-97ddef0535db" />
 
 ## Comandes generals i instal.lacions
+<img width="434" height="34" alt="image" src="https://github.com/user-attachments/assets/01eaa5a3-41a1-49a2-89eb-679c0295563d" />
+
+- Amb la comanda "apt-cache policy htop", veem quin es el candidat:
+<img width="687" height="163" alt="image" src="https://github.com/user-attachments/assets/8751a62e-60ed-420b-8a91-bfc9462d118f" />
+
+- Per a canviar el candidat preferit, crearem amb nano "/etc/apt/preferences.d/htop.pref" i afegirem el seguent:
+<img width="563" height="168" alt="image" src="https://github.com/user-attachments/assets/e76dc5ee-3691-4f4b-9316-9439a7f92a7f" />
+
+- Actualitzem i comprovem:
+<img width="455" height="109" alt="image" src="https://github.com/user-attachments/assets/fa4d57e3-c0ec-4f7c-a8aa-5ce5c1a0b87e" />
