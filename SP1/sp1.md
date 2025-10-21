@@ -59,39 +59,68 @@ swap com a memòria extra, quedaria aixi (he posat un terminal per que veigues q
   <img width="639" height="306" alt="image" src="https://github.com/user-attachments/assets/f6586b35-be7b-43e8-925d-b035614ba9b9" />
 
 - Instalem Windows a la particio lliure:
-
-  <img width="642" height="474" alt="image" src="https://github.com/user-attachments/assets/c1fac733-d1d9-4f22-bffd-19780207e716" />
+<img width="642" height="474" alt="image" src="https://github.com/user-attachments/assets/c1fac733-d1d9-4f22-bffd-19780207e716" />
 
 - Creem cuenta domini:
-  <img width="569" height="402" alt="image" src="https://github.com/user-attachments/assets/1f0fa471-d29d-48b6-8fde-e1d9fb847a3f" />
+<img width="569" height="402" alt="image" src="https://github.com/user-attachments/assets/1f0fa471-d29d-48b6-8fde-e1d9fb847a3f" />
 
 - I ja tenim windows instalat:
-  <img width="608" height="768" alt="image" src="https://github.com/user-attachments/assets/0a1aeded-b73b-4804-b240-df4d49b47338" />
+<img width="608" height="768" alt="image" src="https://github.com/user-attachments/assets/0a1aeded-b73b-4804-b240-df4d49b47338" />
 
 #### Pas 1
 - Per recuperar el grub posem la iso de Super-Grub2:
-  <img width="463" height="253" alt="image" src="https://github.com/user-attachments/assets/12e1d3ef-9b08-4e02-946f-efdcff2f0886" />
+<img width="463" height="253" alt="image" src="https://github.com/user-attachments/assets/12e1d3ef-9b08-4e02-946f-efdcff2f0886" />
   
-  - entrem al boot menu de vbox
-    <img width="622" height="316" alt="image" src="https://github.com/user-attachments/assets/3630cc08-41c2-4057-a697-1665c3f871ea" />
+- Entrem al boot menu de vbox
+ <img width="622" height="316" alt="image" src="https://github.com/user-attachments/assets/3630cc08-41c2-4057-a697-1665c3f871ea" />
 
-  - Seleccionem "detect and show boot methods":
-      <img width="475" height="232" alt="image" src="https://github.com/user-attachments/assets/0fc802dc-88d6-472a-acd5-6d6621441f27" />
+- Seleccionem "detect and show boot methods":
+<img width="475" height="232" alt="image" src="https://github.com/user-attachments/assets/0fc802dc-88d6-472a-acd5-6d6621441f27" />
 
-  - i hem de buscar grub.cfg de ubuntu:
-    <img width="593" height="305" alt="image" src="https://github.com/user-attachments/assets/254bad85-31c9-4c2e-9430-b800220b71c5" />
+- I hem de buscar grub.cfg de ubuntu:
+<img width="593" height="305" alt="image" src="https://github.com/user-attachments/assets/254bad85-31c9-4c2e-9430-b800220b71c5" />
 
-  - Un cop entrem a Ubuntu, executem les seguents comandes per arreglar el grup desde el terminal, per que finalment ens surtigue el que es veu a la imatge:
-  <img width="516" height="116" alt="image" src="https://github.com/user-attachments/assets/c173a3f0-381c-4b02-acc8-963eca7527b4" />
-  <img width="437" height="56" alt="image" src="https://github.com/user-attachments/assets/ad983333-33b0-4fce-ae51-2deab0c26e3b" />
-  <img width="673" height="94" alt="image" src="https://github.com/user-attachments/assets/8d9dc0cc-9ecd-4832-8dab-f1858ed559d8" />
+- Un cop entrem a Ubuntu, executem les seguents comandes per arreglar el grup desde el terminal, per que finalment ens surtigue el que es veu a la imatge:
+<img width="516" height="116" alt="image" src="https://github.com/user-attachments/assets/c173a3f0-381c-4b02-acc8-963eca7527b4" />
+<img width="437" height="56" alt="image" src="https://github.com/user-attachments/assets/ad983333-33b0-4fce-ae51-2deab0c26e3b" />
+<img width="673" height="94" alt="image" src="https://github.com/user-attachments/assets/8d9dc0cc-9ecd-4832-8dab-f1858ed559d8" />
   
 - Reiniciem i veurem que ja entrem al grub per poder seleccionar ubuntu o windows
-   <img width="634" height="182" alt="image" src="https://github.com/user-attachments/assets/d9b6c5ed-2b03-4e73-ad19-decb42bae7d5" />
-
-
-
+<img width="634" height="182" alt="image" src="https://github.com/user-attachments/assets/d9b6c5ed-2b03-4e73-ad19-decb42bae7d5" />
 
 ## Punts de restauracio
+- Instal.lem timeshift amb la comanda "sudo apt install timeshift":
+<img width="518" height="21" alt="image" src="https://github.com/user-attachments/assets/2afa5d7b-5afc-4310-98e1-662502752998" />
+
+- creem la particio amb: fdisk /dev/sdb i seguim amb els seguents pasos:
+<img width="873" height="348" alt="image" src="https://github.com/user-attachments/assets/9e31b5c7-93e7-4541-9687-2d8180ca9fea" />
+
+- Amb "sudo fdisk -l" veurem que ja tenim sdb1 en 15gb:
+<img width="615" height="193" alt="3" src="https://github.com/user-attachments/assets/1885b373-6d64-430c-994b-ff6a912e9138" />
+
+- Formatem:
+<img width="782" height="238" alt="image" src="https://github.com/user-attachments/assets/e2d2b9fc-8c78-4bb9-a77a-4a9c34ef19e4" />
+
+- Per a comprovar si al fer la instantanea es guarda tot, creem archiu:
+<img width="920" height="146" alt="5" src="https://github.com/user-attachments/assets/f87e72d3-4ba8-4f09-9f00-13bc178b7e24" />
+
+- Obrim timeshift i seleccionem el disc formatat:
+<img width="599" height="233" alt="7" src="https://github.com/user-attachments/assets/06663d9c-46b1-40f8-9805-fe1414b8530a" />
+
+- Seleccionem cuan es que volem que es faiguin les instantanies:
+<img width="519" height="351" alt="8" src="https://github.com/user-attachments/assets/f9b8db10-9a45-4874-9e7c-2995f4efcb9d" />
+
+- Seleccionem del que volem fer la instantanea:
+<img width="719" height="252" alt="9" src="https://github.com/user-attachments/assets/a2b7603f-d1bd-4a99-93b6-db2d676e1253" />
+
+-Borrem els archius que haviem creat avans i recuperem la instantanea:
+<img width="509" height="220" alt="12" src="https://github.com/user-attachments/assets/d754a7a2-e624-412a-a8db-ae8f5d218930" />
+<img width="511" height="187" alt="11" src="https://github.com/user-attachments/assets/53dbda31-c76e-4417-b0fd-6baed2ab94cb" />
+<img width="826" height="623" alt="13" src="https://github.com/user-attachments/assets/5b4acff9-6209-455b-b525-bec580556710" />
+<img width="507" height="150" alt="14" src="https://github.com/user-attachments/assets/02628d38-84ad-4658-9533-0f6ae3d332ad" />
+
+- i si tot a hanat be, ens aurien de sortir els archius creats que haviem borrat:
+<img width="536" height="74" alt="16" src="https://github.com/user-attachments/assets/8c613f4b-f346-4866-906e-8c8250bc953b" />
+
 ## Configuracio de la xarxa
 ## Comandes generals i instal.lacions
