@@ -8,12 +8,12 @@ title: "Sprint 1: Instal.lacio i Configuracio Inicial"
 #### Pas 1
 - Primerament obrirem Virtualbox i polsarem a "nova", seguidament ens obrira una pagina on aurem de posar-li un nom a la 
 maquina virtual, amb el meu cas "Ubuntu 22.04" tal com es veu a la imatge i polsarem "Endavant":
--
-<img width="858" height="469" alt="image" src="https://github.com/user-attachments/assets/34006d87-4824-4670-8bee-d6d257101e67" />
+
+   <img width="858" height="469" alt="image" src="https://github.com/user-attachments/assets/34006d87-4824-4670-8bee-d6d257101e67" />
 
 - Escollim la RAM i nuclis de CPU que volem per la maquina:
-- 
-<img width="861" height="467" alt="image" src="https://github.com/user-attachments/assets/27d3addf-aa48-43fd-b1f6-b2658fb9f5f6" />
+ 
+  <img width="861" height="467" alt="image" src="https://github.com/user-attachments/assets/27d3addf-aa48-43fd-b1f6-b2658fb9f5f6" />
 
 - Escollim l'espai que volem assignar al disc dur de la maquina, polsarem "Endavan" i "Finish":
 - 
