@@ -21,23 +21,24 @@ maquina virtual, amb el meu cas "Ubuntu 22.04" tal com es veu a la imatge i pols
 
 #### Pas 2 
 - Abans d'iniciar la maquina, hem de posar la iso amb el sistema operatiu, anem a parametres de la maquina i a "Emmagatzematge", premem on es veu a la image i la afegim:
-- 
-<img width="875" height="541" alt="image" src="https://github.com/user-attachments/assets/d8268c87-6607-46b1-95b8-32c8d55c7246" />
+  
+   <img width="875" height="541" alt="image" src="https://github.com/user-attachments/assets/d8268c87-6607-46b1-95b8-32c8d55c7246" />
 
 - I a xarxa, posem xarxa nat, ja que Les màquines virtuals dins de la mateixa xarxa NAT poden connectar-se entre elles i igual que amb nat, te sortida a internet
 
-<img width="872" height="546" alt="image" src="https://github.com/user-attachments/assets/973b28f5-66c3-4437-ac35-c54d8b429beb" />
+   <img width="872" height="546" alt="image" src="https://github.com/user-attachments/assets/973b28f5-66c3-4437-ac35-c54d8b429beb" />
 
 
 - Iniciem la maquina:
-<img width="383" height="89" alt="image" src="https://github.com/user-attachments/assets/bc058112-80d2-422d-8f53-64a937cf4bea" />
+   <img width="383" height="89" alt="image" src="https://github.com/user-attachments/assets/bc058112-80d2-422d-8f53-64a937cf4bea" />
 
 ---
 
 ### Particions
 - Per a l'apartat de particions, he creat les particions normals (/home, /boot, /) i /swap, perque com tenim 4gb de RAM, si es plena, el sistema pot utilitzar la partició
 swap com a memòria extra, quedaria aixi (he posat un terminal per que veigues que la captura es feta per mi):
-<img width="821" height="639" alt="image" src="https://github.com/user-attachments/assets/06594374-441c-4c0a-a89a-60bccf05ba70" />
+
+  <img width="821" height="639" alt="image" src="https://github.com/user-attachments/assets/06594374-441c-4c0a-a89a-60bccf05ba70" />
 
 
 
@@ -52,25 +53,28 @@ swap com a memòria extra, quedaria aixi (he posat un terminal per que veigues q
 
 
 ## Gestors d'arrencada per a instal.lacions DUALS
-- A la maquina virtual, activem la seguent opcio:
+   
+   - A la maquina virtual, activem la seguent opcio:
 <img width="877" height="579" alt="image" src="https://github.com/user-attachments/assets/3abcf2cd-9d14-4580-a41a-5f60ca00b557" />
 
 - Posem la ISo de Windows i arranquem fins arribar aqui:
-<img width="595" height="254" alt="image" src="https://github.com/user-attachments/assets/103597d2-c02d-4225-9610-cb2b2cb441e4" />
-<img width="639" height="306" alt="image" src="https://github.com/user-attachments/assets/f6586b35-be7b-43e8-925d-b035614ba9b9" />
+
+   <img width="595" height="254" alt="image" src="https://github.com/user-attachments/assets/103597d2-c02d-4225-9610-cb2b2cb441e4" />
+   <img width="639" height="306" alt="image" src="https://github.com/user-attachments/assets/f6586b35-be7b-43e8-925d-b035614ba9b9" />
 
 - Instalem Windows a la particio lliure:
-<img width="642" height="474" alt="image" src="https://github.com/user-attachments/assets/c1fac733-d1d9-4f22-bffd-19780207e716" />
+
+  <img width="642" height="474" alt="image" src="https://github.com/user-attachments/assets/c1fac733-d1d9-4f22-bffd-19780207e716" />
 
 - Creem cuenta domini:
-<img width="569" height="402" alt="image" src="https://github.com/user-attachments/assets/1f0fa471-d29d-48b6-8fde-e1d9fb847a3f" />
+   <img width="569" height="402" alt="image" src="https://github.com/user-attachments/assets/1f0fa471-d29d-48b6-8fde-e1d9fb847a3f" />
 
 - I ja tenim windows instalat:
-<img width="608" height="768" alt="image" src="https://github.com/user-attachments/assets/0a1aeded-b73b-4804-b240-df4d49b47338" />
+   <img width="608" height="768" alt="image" src="https://github.com/user-attachments/assets/0a1aeded-b73b-4804-b240-df4d49b47338" />
 
 #### Pas 1
 - Per recuperar el grub posem la iso de Super-Grub2:
-<img width="463" height="253" alt="image" src="https://github.com/user-attachments/assets/12e1d3ef-9b08-4e02-946f-efdcff2f0886" />
+   <img width="463" height="253" alt="image" src="https://github.com/user-attachments/assets/12e1d3ef-9b08-4e02-946f-efdcff2f0886" />
   
 - Entrem al boot menu de vbox
 <img width="622" height="316" alt="image" src="https://github.com/user-attachments/assets/3630cc08-41c2-4057-a697-1665c3f871ea" />
