@@ -143,4 +143,5 @@ swap com a memòria extra, quedaria aixi (he posat un terminal per que veigues q
 <img width="563" height="168" alt="image" src="https://github.com/user-attachments/assets/e76dc5ee-3691-4f4b-9316-9439a7f92a7f" />
 
 - Actualitzem i comprovem:
+
 <img width="455" height="109" alt="image" src="https://github.com/user-attachments/assets/fa4d57e3-c0ec-4f7c-a8aa-5ce5c1a0b87e" />
