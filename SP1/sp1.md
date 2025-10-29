@@ -16,8 +16,8 @@ maquina virtual, amb el meu cas "Ubuntu 22.04" tal com es veu a la imatge i pols
   <img width="861" height="467" alt="image" src="https://github.com/user-attachments/assets/27d3addf-aa48-43fd-b1f6-b2658fb9f5f6" />
 
 - Escollim l'espai que volem assignar al disc dur de la maquina, polsarem "Endavan" i "Finish":
-- 
-<img width="726" height="443" alt="image" src="https://github.com/user-attachments/assets/fc3b42c9-8e00-4f87-9073-057c0d043a6c" />
+
+   <img width="726" height="443" alt="image" src="https://github.com/user-attachments/assets/fc3b42c9-8e00-4f87-9073-057c0d043a6c" />
 
 #### Pas 2 
 - Abans d'iniciar la maquina, hem de posar la iso amb el sistema operatiu, anem a parametres de la maquina i a "Emmagatzematge", premem on es veu a la image i la afegim:
