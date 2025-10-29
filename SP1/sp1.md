@@ -55,7 +55,8 @@ swap com a memòria extra, quedaria aixi (he posat un terminal per que veigues q
 ## Gestors d'arrencada per a instal.lacions DUALS
    
    - A la maquina virtual, activem la seguent opcio:
-<img width="877" height="579" alt="image" src="https://github.com/user-attachments/assets/3abcf2cd-9d14-4580-a41a-5f60ca00b557" />
+
+   <img width="877" height="579" alt="image" src="https://github.com/user-attachments/assets/3abcf2cd-9d14-4580-a41a-5f60ca00b557" />
 
 - Posem la ISo de Windows i arranquem fins arribar aqui:
 
@@ -72,7 +73,7 @@ swap com a memòria extra, quedaria aixi (he posat un terminal per que veigues q
 
 - I ja tenim windows instalat:
 
-  <img width="608" height="768" alt="image" src="https://github.com/user-attachments/assets/0a1aeded-b73b-4804-b240-df4d49b47338" />
+   <img width="608" height="768" alt="image" src="https://github.com/user-attachments/assets/0a1aeded-b73b-4804-b240-df4d49b47338" />
 
 #### Pas 1
 - Per recuperar el grub posem la iso de Super-Grub2:
