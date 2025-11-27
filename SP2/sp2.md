@@ -41,7 +41,9 @@ I verifiquem que les particions es mostren correctament dins de GParted.
 <img width="364" height="108" alt="12" src="https://github.com/user-attachments/assets/175a7ec3-286d-4b51-aef1-56e6e79e816c" />
 <img width="611" height="183" alt="13" src="https://github.com/user-attachments/assets/298acc85-19d9-4894-bcb3-3675ef2c3e25" />
 <img width="430" height="183" alt="14" src="https://github.com/user-attachments/assets/7c479702-997d-4fe4-bf04-3a11fe58aac9" />
+
 Si tornem a muntar, veiem que tornen a apareixer els fitxers.
+
 <img width="623" height="234" alt="15" src="https://github.com/user-attachments/assets/8921babe-7671-4bfe-a941-d3273d8e147b" />
 
 Per fer que el muntatge sigui permanent, modifiquem el fitxer /etc/fstab, afegint la mateixa informació que utilitzàvem en el muntatge manual. Un cop guardats els canvis, reiniciem el sistema perquè s’apliquin.
