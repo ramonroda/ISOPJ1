@@ -102,11 +102,62 @@ Per retirar un usuari d’un grup, podem utilitzar la comanda deluser alumnat2 a
 
 <img width="509" height="99" alt="image" src="https://github.com/user-attachments/assets/642e262e-394e-4d6b-8ba9-2e199b79f6a3" />
 
+- ICACLS
+Per visualitzar els permisos ACL configurats en un fitxer o directori, podem utilitzar l’ordre getfacl. Per exemple, podem consultar-los en la carpeta ramon
+
+<img width="510" height="279" alt="image" src="https://github.com/user-attachments/assets/ed06d990-8894-4e41-ad25-dd3238442b11" />
+
+Si, per exemple, no volem que un segon usuari tingui accés a la carpeta, podem aplicar una regla restrictiva mitjançant setfacl per denegar-li els permisos.
+
+<img width="537" height="230" alt="image" src="https://github.com/user-attachments/assets/86d59015-e58c-478e-975c-fd97f7c9148d" />
+
+I posteriorment verifiquem que el segon ja no té permís per accedir-hi.
+
+<img width="645" height="101" alt="image" src="https://github.com/user-attachments/assets/5fc6e558-61c9-4c11-ac99-1f851142857c" />
+
+Amb setfacl -b ramon, restablim els permisos eliminant totes les ACL aplicades prèviament.
+
+<img width="456" height="383" alt="image" src="https://github.com/user-attachments/assets/daf65c9b-9a1e-495d-852f-8b5a748f31f5" />
+
+### Exercisi
+He generat el grup palomes i hi he afegit els usuaris persona1 i persona2. A més, també he creat els comptes d’usuari persona3 i persona4.
+
+<img width="385" height="26" alt="image" src="https://github.com/user-attachments/assets/31e2d522-cf32-4529-8589-016d3a9902db" />
+<img width="827" height="393" alt="image" src="https://github.com/user-attachments/assets/e7aee194-d36a-4206-a989-3cf2e052c9d1" />
+
+He creat una carpeta i un fitxer a l’interior que seran compartits entre els quatre usuaris.
+
+<img width="570" height="215" alt="image" src="https://github.com/user-attachments/assets/2f04fc24-b229-48d6-986e-224c263fd806" />
+<img width="445" height="108" alt="image" src="https://github.com/user-attachments/assets/d95f8c33-656f-4436-9ebf-d64cd62c399b" />
+
+- UMASK
+Canvi temporal (en sessió Shell)
+Es pot modificar la umask directament amb la comanda umask + mascara.
+Aquest canvi només és vàlid mentre dura la sessió actual.
+En l’exemple, s’ha provat amb l’usuari root, aplicant 001, cosa que permet lectura i escriptura al grup i a altres usuaris.
+
+⚠ No és recomanable, ja que pot exposar fitxers i permetre execució o modificacions no desitjades.
+
+Canvi permanent (login.defs)
+Per fer que la configuració sigui permanent per a futurs usuaris, s’ha editat el fitxer /etc/login.defs, establint una umask fixa.
+S’ha configurat 077, de manera que només l’usuari propietari té permisos complets sobre els fitxers i directoris que crea.
 
 
 
-### Fitxers importants
-### Comandes basiques
-### Directoris i fitxers importants
-### Gestio avançada
-### PAM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
