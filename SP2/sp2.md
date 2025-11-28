@@ -134,14 +134,10 @@ He creat una carpeta i un fitxer a l’interior que seran compartits entre els q
 Canvi temporal (en sessió Shell)
 Es pot modificar la umask directament amb la comanda umask + mascara.
 Aquest canvi només és vàlid mentre dura la sessió actual.
-En l’exemple, s’ha provat amb l’usuari root, aplicant 001, cosa que permet lectura i escriptura al grup i a altres usuaris.
+En l’exemple, s’ha provat amb l’usuari root, aplicant 001, cosa que permet lectura i escriptura al grup i a altres usuaris. No és recomanable, ja que pot exposar fitxers i permetre execució o modificacions no desitjades.
+Per fer que la configuració sigui permanent per a futurs usuaris, s’ha editat el fitxer /etc/login.defs, establint una umask fixa. S’ha configurat 077, de manera que només l’usuari propietari té permisos complets sobre els fitxers i directoris que crea.
 
-⚠ No és recomanable, ja que pot exposar fitxers i permetre execució o modificacions no desitjades.
-
-Canvi permanent (login.defs)
-Per fer que la configuració sigui permanent per a futurs usuaris, s’ha editat el fitxer /etc/login.defs, establint una umask fixa.
-S’ha configurat 077, de manera que només l’usuari propietari té permisos complets sobre els fitxers i directoris que crea.
-
+<img width="736" height="466" alt="image" src="https://github.com/user-attachments/assets/77bc6b15-0ab5-4c32-8ec6-65bf35c070a2" />
 
 
 
