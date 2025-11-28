@@ -52,6 +52,57 @@ Per fer que el muntatge sigui permanent, modifiquem el fitxer /etc/fstab, afegin
 
 
 ### Gestio d'usuaris, grups i permisos
+- Usuaris
+passwd. Aquest arxiu emmagatzema les dades de tots els usuaris del sistema, tant dels que poden iniciar sessió de manera gràfica com dels comptes interns utilitzats pel propi sistema. Des d’aquí es pot comprovar si un usuari té o no contrasenya (encara que no es desi en aquest fitxer), així com consultar el seu grup per defecte i el directori personal assignat.
+
+<img width="1015" height="636" alt="1" src="https://github.com/user-attachments/assets/4d89de5e-31bf-43f3-bfa4-c5ac36105414" />
+
+shadow. En aquest arxiu s’hi llisten tots els comptes d’usuari del sistema juntament amb la seva contrasenya xifrada, en cas que en disposin. A més, els diferents camps permeten conèixer aspectes relacionats amb la vigència de la contrasenya, com la seva caducitat o la data de l’últim canvi. En resum, es pot considerar el fitxer que centralitza tota la informació vinculada a les contrasenyes dels usuaris.
+
+<img width="612" height="345" alt="image" src="https://github.com/user-attachments/assets/68e6c0d4-950c-4586-809b-8bbab8e1dc54" />
+
+Aquest fitxer recopila la llista completa dels grups existents al sistema i permet identificar quins usuaris estan associats a cadascun d’ells.
+
+<img width="693" height="495" alt="2" src="https://github.com/user-attachments/assets/1af86dd2-1231-4e69-9e63-23ff85e36f52" />
+
+Aquest arxiu inclou informació similar a la del fitxer /etc/group, però amb un detall addicional: aquí es pot consultar quin usuari exerceix com a administrador o responsable de cada grup.
+
+<img width="596" height="358" alt="image" src="https://github.com/user-attachments/assets/6187e004-0495-4b9e-93e0-93902158dbf9" />
+
+Ara procedirem a crear un nou compte d’usuari al sistema utilitzant l’assistent que ofereix la comanda adduser
+
+<img width="589" height="432" alt="5" src="https://github.com/user-attachments/assets/2e842d09-2824-4779-b434-3397a7f84c6b" />
+
+Un cop creat l’usuari, comprovem que als fitxers mencionats anteriorment s’han generat les entrades corresponents a aquest nou compte.
+
+<img width="1012" height="582" alt="6" src="https://github.com/user-attachments/assets/2338c9a6-af32-421a-a058-f38090df8baa" />
+
+Si eliminem l’usuari amb userdel -r alumnat, comprovarem que s’han suprimit tant les entrades associades com el seu directori personal.
+
+<img width="575" height="70" alt="image" src="https://github.com/user-attachments/assets/3389956e-8c50-4d10-96da-009e68d10a98" />
+<img width="505" height="100" alt="image" src="https://github.com/user-attachments/assets/ed6629ab-cbc0-40fb-a755-eb3f6e2390d0" />
+
+A continuació creem un altre usuari, aquesta vegada utilitzant la comanda useradd. Un cop creat, consultem el fitxer /etc/passwd i podem observar que se li han assignat diferents paràmetres per defecte, com l’intèrpret de comandes i la ruta del seu directori personal. Tot i així, encara que s’indiqui un home directory, aquest no es genera automàticament.
+
+<img width="526" height="110" alt="image" src="https://github.com/user-attachments/assets/3baca9e8-8bb0-4e2e-a1ad-2958970eca20" />
+
+- Grups
+Podem generar un nou grup amb la comanda addgroup asix, i posteriorment ajustar-ne la configuració o característiques utilitzant groupmod.
+
+<img width="478" height="44" alt="image" src="https://github.com/user-attachments/assets/cae0f1ab-8d05-446d-b665-ffd96c1e9718" />
+<img width="487" height="83" alt="image" src="https://github.com/user-attachments/assets/1ebb740e-7de6-4bd5-acf7-f889c2154058" />
+
+Per afegir usuaris ho podem fer de diverses maneres, com per exemple:
+
+<img width="487" height="83" alt="image" src="https://github.com/user-attachments/assets/3453b0c5-1e31-4f60-ab80-73d0dbaecae6" />
+<img width="462" height="62" alt="image" src="https://github.com/user-attachments/assets/b992af27-6992-4076-b0ab-dafb47c6fcd8" />
+<img width="500" height="45" alt="image" src="https://github.com/user-attachments/assets/3906fa86-cd6c-45b0-a528-a9a360e5e94b" />
+
+Per retirar un usuari d’un grup, podem utilitzar la comanda deluser alumnat2 asixA, la qual elimina la seva associació amb aquest grup.
+
+<img width="509" height="99" alt="image" src="https://github.com/user-attachments/assets/642e262e-394e-4d6b-8ba9-2e199b79f6a3" />
+
+
 
 
 ### Fitxers importants
