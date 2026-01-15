@@ -159,8 +159,12 @@ Exemples:
 ps aux
 ps -ef
 ps -u $USER
+```
+Per filtrar un procés, podem utilitzar grep en combinació amb altres eines.
 
+Podem filtrar per els processos del usuari alumne
 
+<img width="589" height="435" alt="h1" src="https://github.com/user-attachments/assets/8ac36569-9852-4e5d-9355-df4eb00ada66" />
 
 
 
