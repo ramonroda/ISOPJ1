@@ -136,6 +136,30 @@ En l’exemple, s’ha provat amb l’usuari root, aplicant 001, cosa que permet
 
 <img width="736" height="466" alt="image" src="https://github.com/user-attachments/assets/77bc6b15-0ab5-4c32-8ec6-65bf35c070a2" />
 
+# Gestió de processos (Linux)
+
+Un **procés** és un programa en execució. Quan s’inicia, el sistema li assigna un **PID** (Process ID) i queda associat a un usuari i a uns recursos (CPU, memòria, E/S).  
+El sistema operatiu reparteix el temps de CPU entre processos amb el **planificador**, i cada procés pot passar per diversos **estats** (executant-se, preparat, adormit/esperant, aturat o zombi).
+
+## Conceptes clau
+
+- **PID**: identificador únic del procés.
+- **PPID**: PID del procés pare.
+- **Usuari**: qui l’ha iniciat (o el servei que l’executa).
+- **Prioritat**: influència sobre quan s’executa (nice/renice).
+- **Senyal**: “missatge” per controlar un procés (SIGTERM, SIGKILL, etc.).
+
+- **ps** → fotografia puntual del sistema
+- **top** → vista dinàmica en temps real
+- **htop** → versió millorada i més visual (si està instal·lat)
+
+Exemples:
+
+```bash
+ps aux
+ps -ef
+ps -u $USER
+
 
 
 
