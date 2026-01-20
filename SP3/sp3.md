@@ -8,6 +8,9 @@ Posteriorment, accedim al fitxer /etc/hosts, on associarem el nou hostname a lâ€
 
 <img width="577" height="258" alt="3" src="https://github.com/user-attachments/assets/a1a0cd17-53d8-4989-9806-4b3130cbd908" />
 
+Tot seguit, procedim a instalÂ·lar els serveis necessaris per poder desplegar i administrar el servei LDAP dins del sistema.
+
+<img width="512" height="117" alt="4" src="https://github.com/user-attachments/assets/bb440af8-13a3-4bba-96f8-445d5a143576" />
 
 
 
