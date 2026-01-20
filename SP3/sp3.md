@@ -32,12 +32,17 @@ A continuació, afegim al fitxer /etc/hosts el domini que havíem definit anteri
 
 <img width="731" height="301" alt="9" src="https://github.com/user-attachments/assets/2f177331-76c7-4cf9-9dda-dee0147edf9b" />
 
+Nom de l'organització.
 
+<img width="723" height="301" alt="10" src="https://github.com/user-attachments/assets/25eccc4c-a3fb-446c-9fe0-be64edf1e433" />
 
+Eliminem la base de dades en purgar.
 
+<img width="728" height="302" alt="11" src="https://github.com/user-attachments/assets/245663a1-01ed-4beb-81d4-76880a9f9f16" />
 
+Finalment, desplacem la base de dades anterior i executem l’ordre slapcat per verificar que tots els canvis configurats s’han aplicat correctament i que el directori LDAP funciona tal com s’esperava.
 
-
+<img width="761" height="323" alt="12" src="https://github.com/user-attachments/assets/3b8cffbf-696d-462d-b4c2-0227f2c17870" />
 
 
 
