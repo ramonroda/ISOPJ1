@@ -62,28 +62,59 @@ Ara, afegirem un usuari amb usu.ldif
 
 <img width="552" height="440" alt="16" src="https://github.com/user-attachments/assets/d9f95166-5d16-4298-b2cf-40ec43d00f6e" />
 
+I executarem la comanda:
 
+<img width="847" height="145" alt="17" src="https://github.com/user-attachments/assets/2f8a0174-0c68-4d1b-96aa-c68ca72db4df" />
 
+El mateix per crear un grup
 
+<img width="501" height="215" alt="18" src="https://github.com/user-attachments/assets/4c24052d-e37a-4a3f-b66d-7c2b68d099ff" />
 
+Ja fet tot al server pasem al client
 
+### Configuració del client
 
+Provem de intentar fer un ping al servidor.
 
+<img width="650" height="249" alt="20" src="https://github.com/user-attachments/assets/1ba83b2f-f28b-480b-803b-ded5e5c33058" />
 
+Ens hem de descarregar els següents paquets:
 
+<img width="807" height="145" alt="19" src="https://github.com/user-attachments/assets/ee546bf3-5346-49fa-b0aa-7c90c84746b5" />
 
+Durant el procés d’instal·lació, es mostrarà un assistent de configuració que sol·licitarà la introducció de l’adreça IP corresponent al domini.
 
+<img width="713" height="429" alt="21" src="https://github.com/user-attachments/assets/758a0126-76ba-433a-9e04-811f8ba1fc71" />
 
+El nom
 
+<img width="636" height="324" alt="22" src="https://github.com/user-attachments/assets/e777d245-ceb2-4a5f-8744-42181bf55f6a" />
 
+Versio (3)
 
+<img width="483" height="315" alt="23" src="https://github.com/user-attachments/assets/238feaa0-d7a2-436f-8541-8df551a23512" />
 
+Deixem per defecte i premem "si"
 
+<img width="639" height="384" alt="24" src="https://github.com/user-attachments/assets/63520d7c-bd8a-460b-8d33-8fcd7fcc6e0e" />
 
+<img width="702" height="354" alt="25" src="https://github.com/user-attachments/assets/65bbaf5d-f8b7-477f-8a54-3e5921999fe2" />
 
+Administrador
 
+<img width="448" height="288" alt="26" src="https://github.com/user-attachments/assets/a754377b-c3c6-4251-b553-5528ddb01097" />
 
+MD5
 
+<img width="532" height="353" alt="27" src="https://github.com/user-attachments/assets/573616a1-3c03-45aa-98fe-85f3837b7b92" />
+
+Modifiquem /etc/pam.d/common-session
+
+<img width="789" height="463" alt="29" src="https://github.com/user-attachments/assets/79b3bfe6-cde6-4890-9399-ee8ffcf773ce" />
+
+Modifiquem /etc/pam.d/common-password
+
+<img width="1213" height="712" alt="28" src="https://github.com/user-attachments/assets/7ce59ee1-d843-4e53-8c0b-c9d880bcc539" />
 
 
 
