@@ -116,7 +116,11 @@ Modifiquem /etc/pam.d/common-password
 
 <img width="1213" height="712" alt="28" src="https://github.com/user-attachments/assets/7ce59ee1-d843-4e53-8c0b-c9d880bcc539" />
 
+Ara, modificarem /usr/share/lightdm/lightdm.conf.d/50-ubuntu.conf.
 
+<img width="938" height="186" alt="30" src="https://github.com/user-attachments/assets/f1e7dea2-143f-42a2-8929-e0952fcca98b" />
+
+<img width="833" height="73" alt="31" src="https://github.com/user-attachments/assets/71aa57f5-7cee-448a-a734-70d87e81a56b" />
 
 
 
