@@ -12,11 +12,13 @@ Tot seguit, procedim a instal·lar els serveis necessaris per poder desplegar i 
 
 <img width="512" height="117" alt="4" src="https://github.com/user-attachments/assets/bb440af8-13a3-4bba-96f8-445d5a143576" />
 
+Al llarg del procés d’instal·lació, el sistema sol·licitarà l’establiment d’una contrasenya per a l’usuari administrador del servei LDAP. És important conservar-la, ja que serà necessària per a futures tasques d’administració i configuració.
 
+<img width="816" height="313" alt="5" src="https://github.com/user-attachments/assets/6460f6d7-411e-4bb5-b7a4-d2e1e49ee1e6" />
 
+Per comprovar el contingut del domini, podem utilitzar l’ordre slapcat, la qual permet visualitzar tots els elements i entrades que formen part del directori LDAP.
 
-
-
+<img width="586" height="274" alt="6" src="https://github.com/user-attachments/assets/79c3a1ba-03fe-4060-a8f3-6cf172b57377" />
 
 
 
