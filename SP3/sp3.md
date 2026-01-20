@@ -20,12 +20,17 @@ Per comprovar el contingut del domini, podem utilitzar l’ordre slapcat, la qua
 
 <img width="586" height="274" alt="6" src="https://github.com/user-attachments/assets/79c3a1ba-03fe-4060-a8f3-6cf172b57377" />
 
+Ara, anem a baixades, i descomprimim el fitxer arxius.zip.
 
+<img width="468" height="200" alt="7" src="https://github.com/user-attachments/assets/0ef38d27-6da0-43aa-9742-66603f9a58ef" />
 
+Mitjançant l’ordre dpkg-reconfigure slapd és possible tornar a configurar el servei LDAP i afegir nous elements al domini d’una manera més senzilla i guiada. Com a alternativa, també es poden utilitzar els fitxers de configuració .ldif que hem descomprimit prèviament, tot i que aquest mètode resulta menys còmode i més complex de gestionar.
 
+<img width="459" height="138" alt="8" src="https://github.com/user-attachments/assets/05650d77-625c-4aea-8df1-eb85282b0353" />
 
+A continuació, afegim al fitxer /etc/hosts el domini que havíem definit anteriorment, de manera que quedi correctament associat i reconegut pel sistema.
 
-
+<img width="731" height="301" alt="9" src="https://github.com/user-attachments/assets/2f177331-76c7-4cf9-9dda-dee0147edf9b" />
 
 
 
