@@ -44,17 +44,23 @@ Finalment, desplacem la base de dades anterior i executem l’ordre slapcat per 
 
 <img width="761" height="323" alt="12" src="https://github.com/user-attachments/assets/3b8cffbf-696d-462d-b4c2-0227f2c17870" />
 
+En aquest punt, encara no s’han creat elements com usuaris, grups o unitats organitzatives; tot i això, el domini ja es troba correctament configurat i operatiu.
 
+<img width="617" height="575" alt="13" src="https://github.com/user-attachments/assets/7185ef65-30f2-46c6-9878-b4f83a1f0126" />
 
+### Creacio de elements a ldap
 
+A continuació, procedirem a crear una unitat organitzativa. Per fer-ho, utilitzarem el fitxer uo.ldif, un dels arxius que hem descomprimit prèviament, el qual ens servirà com a plantilla per definir aquesta nova estructura dins del domini.
 
+<img width="332" height="248" alt="14" src="https://github.com/user-attachments/assets/e29e967f-7ef1-49e6-b6c0-e3a161d57884" />
 
+Per importar el contingut del fitxer al directori LDAP, executem l’ordre:
 
+<img width="835" height="213" alt="15" src="https://github.com/user-attachments/assets/20a720c4-f1ea-49f2-9aed-6c9e50c6c844" />
 
+Ara, afegirem un usuari amb usu.ldif
 
-
-
-
+<img width="552" height="440" alt="16" src="https://github.com/user-attachments/assets/d9f95166-5d16-4298-b2cf-40ec43d00f6e" />
 
 
 
