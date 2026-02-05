@@ -145,8 +145,70 @@ Despres creem la carpeta que es vol compartir, assignant-li permisos totals per 
 
 <img width="601" height="170" alt="2" src="https://github.com/user-attachments/assets/8fb07ab1-1b78-4d41-9cd9-6498b99a6bd3" />
 
+Ara he creat els usuaris edgar, naim i eros sense accés interactiu al sistema, així com la creació del grup madrid i l’assignació dels usuaris edgar i eros a aquest grup. Finalment, es verifica la creació dels usuaris mitjançant el fitxer /etc/passwd.ç
+
+Assignem contrasenyes
+
+<img width="304" height="242" alt="12(passwd)" src="https://github.com/user-attachments/assets/f31fa558-92c7-4ef7-8e7c-b05752f85ca6" />
 
 
+<img width="455" height="358" alt="3" src="https://github.com/user-attachments/assets/4631c741-2456-4ffd-a862-a67c7613e85b" />
+
+Per configurar el recurs compartit cal editar el fitxer /etc/samba/smb.conf. S’hi defineix la ruta de la carpeta mitjançant l’opció path.
+Es permet l’accés a usuaris anònims o convidats amb guest ok. Els directoris creats tindran una màscara de permisos 0755 (directory mask).
+Es permet navegar pel recurs (browseable), no és només de lectura (read only = no) i permet l’escriptura (writable = yes). Els permisos de lectura es concedeixen al grup @madrid, a l’usuari naim i al convidat. Només l’usuari naim i el convidat poden escriure al recurs. Finalment, es bloqueja explícitament l’accés a l’usuari edgar.
+
+<img width="461" height="434" alt="4" src="https://github.com/user-attachments/assets/15f5f3f7-01f6-4c5c-92b8-3ef5ba6dfc67" />
+
+Reiniciem els serveis i comprovem que estiguen actius
+
+<img width="499" height="540" alt="5" src="https://github.com/user-attachments/assets/5694f9c5-d773-4ac4-9d15-2de14aa0df6f" />
+
+## Configuracio client smb
+
+Comprovem ping amb el servidor
+
+<img width="613" height="121" alt="6" src="https://github.com/user-attachments/assets/ae9ffb9b-9df0-455b-a27a-8e4608e151fc" />
+
+Instalem el paquet smbclient
+
+<img width="461" height="33" alt="7" src="https://github.com/user-attachments/assets/a26a8f54-df01-494b-9118-2be47488fe79" />
+
+I ja pdem connectar-nos mitjançant el navegador de fitxers
+
+<img width="441" height="43" alt="8" src="https://github.com/user-attachments/assets/dfd91cdc-2311-4a8c-9cb0-f85abe95f618" />
+
+### Prova amb usuari anonim
+
+He provat amb l'anonim i he pogut conectarme, crear carpeta i esborar-la
+
+<img width="442" height="203" alt="9" src="https://github.com/user-attachments/assets/36d1f7c3-0b7e-44be-afcd-0d37dd008c8e" />
+
+<img width="231" height="131" alt="10" src="https://github.com/user-attachments/assets/066eeb22-ec65-43e8-b382-3685905227c1" />
+
+Per desconectarmos hem de clicar on surt a la imatge
+
+<img width="304" height="332" alt="11" src="https://github.com/user-attachments/assets/1608f633-0a1d-4b9b-8acb-e88906e6031d" />
+
+### Prova amb usuari naim
+
+Te permis per tot
+
+<img width="571" height="436" alt="13" src="https://github.com/user-attachments/assets/7c4cbc15-fe9c-45f4-b206-5a431d2b3bb1" />
+
+<img width="465" height="186" alt="14" src="https://github.com/user-attachments/assets/14791559-6c0a-402d-a31f-06073d3a57a5" />
+
+<img width="421" height="148" alt="15" src="https://github.com/user-attachments/assets/08645e20-1bf2-4387-9807-17bdcada6287" />
+
+### Prova amb usuari eros
+
+Pot accedir pero no crear ni eliminar directoris o fitxers.
+
+<img width="574" height="431" alt="16" src="https://github.com/user-attachments/assets/6bdcec73-8173-424d-ace7-ec163bd850b3" />
+
+<img width="445" height="239" alt="17" src="https://github.com/user-attachments/assets/de8f7866-fb78-478c-b59b-ebec2bcfb8f5" />
+
+<img width="634" height="220" alt="18" src="https://github.com/user-attachments/assets/b905c610-0bcb-49bd-befa-bee0b2bb0ddd" />
 
 
 
