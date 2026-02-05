@@ -1,4 +1,11 @@
-### Configuracio del server
+## Configuracio previa 
+Hem de posar tant el server com el client amb la mateixa xarxa, amb el meu cas amb el nom "NatNetwork"
+<img width="696" height="366" alt="image" src="https://github.com/user-attachments/assets/0c0dd486-7ecc-4f5a-b084-6fb591aa3920" />
+
+<img width="496" height="316" alt="image" src="https://github.com/user-attachments/assets/6e7cb857-b455-4b5d-b8d5-abd7bc9e5f0f" />
+
+
+## Configuracio del server
 
 En primer lloc, accedim a un terminal dins de la màquina servidor i executem l’ordre ip a per consultar quina adreça IP li ha estat assignada mitjançant DHCP. Un cop identificada aquesta adreça, procedim a configurar-la manualment com a IP estàtica utilitzant la interfície gràfica. És imprescindible que un servidor disposi d’una adreça IP fixa, ja que si fos dinàmica podria variar amb el temps i dificultar l’accés als serveis que ofereix. Disposar d’una IP estàtica garanteix estabilitat, accessibilitat constant i una correcta comunicació amb els clients de la xarxa.
 
@@ -122,9 +129,21 @@ Ara, modificarem /usr/share/lightdm/lightdm.conf.d/50-ubuntu.conf.
 
 <img width="833" height="73" alt="31" src="https://github.com/user-attachments/assets/71aa57f5-7cee-448a-a734-70d87e81a56b" />
 
+Al reiniciar auriem de poder iniciar com a a alu1 (o el nostre nou usuari ldap)
 
+<img width="477" height="383" alt="image" src="https://github.com/user-attachments/assets/97026251-08d0-48de-92e4-a8113d541abe" />
 
+## SAMBA 
+Samba fa que un servidor Linux “parli el mateix idioma” que Windows
 
+## Configuracio Server SMB
+Instal.lem el paquet samba
+
+<img width="415" height="112" alt="1" src="https://github.com/user-attachments/assets/fb8833d1-071c-42cc-90e0-e79d21ccd1c0" />
+
+Despres creem la carpeta que es vol compartir, assignant-li permisos totals per a tots els usuaris, sense establir cap usuari ni grup com a propietaris.
+
+<img width="601" height="170" alt="2" src="https://github.com/user-attachments/assets/8fb07ab1-1b78-4d41-9cd9-6498b99a6bd3" />
 
 
 
