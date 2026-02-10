@@ -211,12 +211,73 @@ Pot accedir pero no crear ni eliminar directoris o fitxers.
 <img width="634" height="220" alt="18" src="https://github.com/user-attachments/assets/b905c610-0bcb-49bd-befa-bee0b2bb0ddd" />
 
 
+## NFS
+
+### Configuracio server
+
+Es un protocol que permet compartir carpetes i archius (no impresores), a traves de una xarxa local la autenitcacio se fa atraves de host, no de usuari, a diferencia de samba, i poden accedir tant clients windows com linux.
+
+Primer exercisi nfs sense ldap. Primer instalem el paquet de nfs
+
+<img width="594" height="112" alt="1" src="https://github.com/user-attachments/assets/c6af8938-7998-478f-9085-492316b17acf" />
+
+Creem la carpeta compartida per fer les proves i li donem els permisos
+
+<img width="640" height="246" alt="1" src="https://github.com/user-attachments/assets/f8f646d6-8e53-422d-8d91-38998a2f532c" />
+
+Ara la compartim via nfs, primer editem l'archiu etc/exports, i hem de posar la carpeta i el filtre
+
+<img width="500" height="338" alt="1" src="https://github.com/user-attachments/assets/bd5565d8-b55f-4292-b9b6-a3dc917cf6ef" />
+
+Ara hem de reiniciar el servei i comprovar que esta actiu
+
+<img width="730" height="240" alt="1" src="https://github.com/user-attachments/assets/83412ea6-df9b-43e4-97ab-cfd69b809d19" />
+
+Creem una carpeta per veure si al client tambe la veurem
+
+<img width="328" height="76" alt="1" src="https://github.com/user-attachments/assets/f6eb2403-1c08-4f7e-b201-1bed6981f594" />
+
+### Configuracio client
+
+Primer instalem el paquet nfs-common i rpcbind
+
+<img width="635" height="271" alt="1" src="https://github.com/user-attachments/assets/ad2aaba6-d7a3-446e-ae65-a8870b345cd5" />
+
+El ateix que el server, creem carpeta i donem permisos
+
+<img width="629" height="342" alt="1" src="https://github.com/user-attachments/assets/2245b245-1a8b-4610-ba3f-f02cdc8cdd34" />
+
+Editem el archiu fstab i posem la ip del server l'archiu, l'archiu...
+
+<img width="832" height="362" alt="1" src="https://github.com/user-attachments/assets/d1534df7-49a3-40f9-ae5c-deb84f7177b3" />
 
 
+Ara per comprovar que tot ha anat be, anem a l'archiu prova i amb un ls auriem de veure "hola"
 
+<img width="614" height="152" alt="1" src="https://github.com/user-attachments/assets/be7b40c5-37ce-4de0-b6da-4d594cf3b190" />
 
+Amb ldap
 
+<img width="387" height="210" alt="1" src="https://github.com/user-attachments/assets/da7afedc-5a37-488a-8ecf-406c203769ab" />
 
+I editem el exports
 
+<img width="642" height="342" alt="1" src="https://github.com/user-attachments/assets/fd8ee28a-fcf3-43db-bdee-929015bee3cd" />
+
+Al client hem de crear homes
+
+<img width="403" height="90" alt="1" src="https://github.com/user-attachments/assets/1af6efad-0f97-42de-b81b-8f83270176db" />
+
+I editem el fstab
+
+<img width="835" height="367" alt="1" src="https://github.com/user-attachments/assets/c9b40828-01bb-4341-9a9d-2f300efa5050" />
+
+ara afegirem a marcel
+
+<img width="649" height="444" alt="1" src="https://github.com/user-attachments/assets/c106ef42-a93d-4a4e-a8cb-81f99675db6a" />
+
+<img width="726" height="105" alt="1" src="https://github.com/user-attachments/assets/fe275478-2a98-4772-9abf-3abb45801650" />
+
+<img width="494" height="168" alt="1" src="https://github.com/user-attachments/assets/b4ecff5a-c5be-42fa-bc6f-f865c26ff7f0" />
 
 
