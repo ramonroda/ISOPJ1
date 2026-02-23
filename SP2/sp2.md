@@ -539,40 +539,646 @@ Raons principals per utilitzar ACL
 
     Faciliten l'auditoria d'accés
 
-<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/7cb29bbe-5f43-481b-90b8-fcdda4e50091" />
+<img width="482" height="303" alt="image" src="https://github.com/user-attachments/assets/64efa175-9d8e-4c04-96d1-c4b5ae7b83eb" />
+
+<img width="467" height="306" alt="image" src="https://github.com/user-attachments/assets/fbfe01a7-ccfb-4175-b50e-f548b7de06f2" />
+
+<img width="458" height="308" alt="image" src="https://github.com/user-attachments/assets/e06293ef-3e0d-4821-ac72-c9e64b99cdad" />
+
+## Umask
+
+Què és la umask?
+
+Màscara que determina els permisos per defecte per a nous arxius i directoris.
+
+On es configura a Ubuntu?
+
+Arxius principals:
+
+    Sistema: /etc/profile i /etc/bash.bashrc
+
+    Usuari: ~/.bashrc
+
+Comprovar umask actual:
+
+**umask**
+
+<img width="164" height="72" alt="image" src="https://github.com/user-attachments/assets/d1512d74-029a-4650-8ce8-f75a29fb9098" />
+
+Valors per defecte a Ubuntu
+
+**Usuaris normals:**
+    umask: 0002
+
+    Arxius: 664 (rw-rw-r--)
+
+    Directoris: 775 (rwxrwxr-x)
+
+**Usuari root:**
+
+    umask: 0022
+
+    Arxius: 644 (rw-r--r--)
+
+    Directoris: 755 (rwxr-xr-x)
+
+<img width="239" height="98" alt="image" src="https://github.com/user-attachments/assets/aa3b2165-614f-4792-9605-412a09e662bd" />
+
+**Com funciona el càlcul?**
+
+Permisos base:
+
+    Arxius: 666 (rw-rw-rw-)
+
+    Directoris: 777 (rwxrwxrwx)
+
+Exemple umask 002:
+
+Arxiu:   666 - 002 = 664 (rw-rw-r--)
+Directori: 777 - 002 = 775 (rwxrwxr-x)
+
+* Aqui he canviat temporalment el umask i he fet una provat creant una carpeta i un arxiu.
+
+<img width="807" height="550" alt="image" src="https://github.com/user-attachments/assets/7e0fc2cd-d7f1-4981-b5c2-9e37ff32855c" />
+
+* Per a fer-ho permanenment podem fer-ho modificant l'arxiu **login.defs**
+
+<img width="832" height="542" alt="image" src="https://github.com/user-attachments/assets/a55151b4-d9f5-4ebf-8d22-be420f8e5208" />
 
 
+## Gestió de processos
+
+Els processos són programes en execució dins del sistema. Cada procés té un PID (Identificador de Procés), un usuari propietari i pot trobar-se en diferents estats (actiu, en espera, aturat…). El sistema operatiu planifica i reparteix el temps de CPU entre ells.
+Eines bàsiques per gestionar-los
+
+    ps, top, htop: veure processos actius.
+
+    kill, pkill: finalitzar un procés per PID o nom.
+
+    nice, renice: ajustar la prioritat d'execució.
+
+    systemctl, service: controlar serveis (daemons). No l'abordarem aquí específicament.
+
+A nivell pràctic, cada procés hereta permisos de l'usuari que l'ha iniciat i pot estar vinculat a un servei o a una sessió d'usuari.
+
+A continuació, veurem com utilitzar-les de manera bàsica.
+
+**Ús de pstree**
+
+```
+Paràmetre	Funció
+-p	Mostra el PID de cada procés.
+-u	Mostra l'usuari propietari de cada procés.
+-h	Ressalta el procés actual (útil quan es filtra).
+-n	Ordena processos per PID dins de cada arbre.
+-a	Mostra els arguments complets del procés (línia de comandes).
+```
+
+Per filtrar un procés, podem utilitzar grep en combinació amb altres eines.
+
+Aquí he filtrat per els processos del usuari alumnat.
+
+<img width="688" height="683" alt="image" src="https://github.com/user-attachments/assets/28d88fb8-12bd-4b5b-bef2-6ce486ce1092" />
+
+I aquí ho he fet com a root.
+
+<img width="852" height="404" alt="image" src="https://github.com/user-attachments/assets/c2d91135-a9de-4974-b985-33f95379d963" />
+
+**ps** Aquesta comanda, mostra informació sobre una selecció dels processos actius. Si volem una actualització repetitiva de la selecció i la informació mostrada, hauriem de usar top en comptes d’això.
+
+Alguns dels parametres mes comuns són:
+```
+a: mostra processos de tots els usuaris, no només del terminal actual.
+u: mostra informació en format d’usuari, amb columnes com %CPU, %MEM, USER.
+x: inclou processos sense terminal associat (daemons i serveis).
+-e: Mostra tots els processos del sistema, equivalent a -A.
+-o: Permet personalitzar exactament quines columnes vols que surti.
+i molts més
+```
+<img width="814" height="405" alt="image" src="https://github.com/user-attachments/assets/306bf402-896b-4682-93f1-c008e976fd39" />
+
+Podem filtrar per obtenir les terminals que l’usuari fa servir amb ps aux | grep usuari | grep tty
+
+Aixó, mostra els processos d’un usuari concret que s’estan executant en terminals.
+
+```
+ps aux: mostra tots els processos amb informació detallada.
+grep usuario: filtra només els processos propietat de l’usuari “usuario”.
+grep tty: filtra només els processos que tenen un terminal associat (tty).
+```
+
+<img width="909" height="258" alt="image" src="https://github.com/user-attachments/assets/9369664e-7092-4a98-ac24-488652887839" />
+
+Si volem matar un proces, podem fer servir kill, te diversos modes de terminar:
+
+```
+Tipus de Kill 	Senyal 	Descripció 	Comanda
+
+Kill suau 	SIGTERM 	Demana al procés finalitzar netament 	kill PID
+Kill forçat 	SIGKILL 	Mata immediatament, sense netejar recursos 	kill -9 PID
+Recarregar config 	SIGHUP 	Demana al procés que recarregui la configuració 	kill -1 PID
+Pausa 	SIGSTOP 	Pausa l’execució del procés 	kill -STOP PID
+Continuar 	SIGCONT 	Continua un procés pausat 	kill -CONT PID
+Interrupció Ctrl-C 	SIGINT 	Senyal d’interrupció (Ctrl+C) 	kill -2 PID
+Abortar 	SIGABRT 	Senyal d’error abortat, sovint genera core dump 	kill -6 PID
+```
+
+Aqui tenim un exemple obrint xclock al fons amb el “&” i matant-lo suau, mentres comprovem amb ps aux que s’ha mort.
+
+<img width="778" height="198" alt="image" src="https://github.com/user-attachments/assets/6e99650d-2bca-4675-8983-561b49e2f9c8" />
+
+També tenim la comanda **top**
+
+**top** és una comanda que mostra informació en temps real sobre processos i l'ús del sistema.
+
+<img width="800" height="478" alt="image" src="https://github.com/user-attachments/assets/0f505c5f-6b43-4243-9130-4f0ec89411d1" />
+
+```
+Part superior (resum del sistema):
+
+    Temps: Temps d'execució del sistema
+
+    Usuaris: Nombre d'usuaris connectats
+
+    Load average: Càrrega mitjana (1, 5, 15 minuts)
+
+    Tasques: Total, en execució, dormint, aturades, zombie
+
+    %CPU: Ús del processador (us, sy, ni, id, wa, hi, si, st)
+
+    Memòria: Total, lliure, usada, memòria buffer/cache
+
+    Swap: Memòria d'intercanvi (swap) total i usada
+
+Part inferior (llista de processos):
+
+    PID: Identificador del procés
+
+    USUARI: Propietari del procés
+
+    PR: Prioritat
+
+    NI: Valor "nice" (prioritat ajustable)
+
+    VIRT: Memòria virtual utilitzada
+
+    RES: Memòria resident (física)
+
+    SHR: Memòria compartida
+
+    %CPU: Percentatge d'ús de CPU
+
+    %MEM: Percentatge d'ús de memòria
+
+    TEMPS+: Temps total d'execució
+
+    COMANDAMENT: Nom de la comanda
+```
+
+També tenim htop que es el mateix pero de manera interactiva.
 
 
+<img width="800" height="528" alt="image" src="https://github.com/user-attachments/assets/84f2efcd-8892-42f4-b921-57d80b949945" />
+
+Estats principals
+
+Codi	Estat (Català)	Descripció
+R	En execució (Running)	El procés està actiu o llest per ser assignat a la CPU
+W	En espera (Waiting)	El procés espera un recurs o un esdeveniment
+S	Aturat (Stopped)	El procés ha estat detingut, normalment per un senyal, sovint durant depuració
+Z	Zombi (Zombie)	El procés ha finalitzat però encara conserva una entrada a la taula de processos
+T	Trencat	Procés aturat per depuració o per senyal de trencament
+D	Dormint	Procés inactiu, esperant I/O, no pot ser interromput
+I	Inactiu (Idle)	El procés està completament inactiu, sense consumir CPU; molt habitual en fils del kernel
+
+Ara amb la comanda renice podem modificar la prioritat de un procés
 
 
+<img width="598" height="240" alt="image" src="https://github.com/user-attachments/assets/a62442bb-87ea-4b7d-a17e-4df77da88eee" />
 
 
+Mostra la llista de feines (processos) que tens en execució o aturades dins de la sessió actual del terminal.
+
+Exemple de sortida:
+
+[1]+  Aturat     nano fitxer.txt
+[2]-  Executant  sleep 100 &
 
 
+Això vol dir:
+
+[1] i [2] són els números de feina
+
+Aturat → el procés està pausat
+
+Executant → el procés està funcionant en segon pla
+
+🔹 fg %1
+
+Serveix per portar una feina del segon pla o pausada al primer pla (foreground).
+
+fg = foreground
+
+%1 indica la feina número 1 (segons el que mostra jobs)
+
+En aquest cas:
+
+fg %1
+
+Recupera la feina número 1 i la torna a executar ocupant el terminal.
+
+Llencar processos amb &
+
+# Còpies de seguretat i automatització de tasques
+
+## Teoria copies de seguretat
+
+Còpies de seguretat
+
+Una còpia de seguretat és una duplicació de les dades que permet recuperar informació en cas de pèrdua, dany, error humà, virus o qualsevol altre desastre. Aquestes còpies s’emmagatzemen de manera independent de les dades originals, preferiblement en un altre dispositiu, servidor o servei al núvol.
+
+Normalment segueixen polítiques definides, com ara el temps de retenció, el nombre de versions guardades i la realització de proves de restauració per assegurar que les dades es poden recuperar correctament.
+
+Tipus principals de còpia de seguretat
+Còpia completa
+
+Desa totes les dades cada vegada que es fa la còpia.
+
+És la més lenta i la que ocupa més espai, però també la més segura i la més fàcil de restaurar, ja que només cal una única còpia per recuperar tota la informació.
+
+Còpia incremental
+
+Només guarda els canvis realitzats des de l’última còpia, sigui completa o incremental.
+
+És molt ràpida i ocupa poc espai. L’inconvenient principal és que, per restaurar les dades, cal disposar de la còpia completa inicial i de totes les còpies incrementals posteriors.
+
+Còpia diferencial
+
+Guarda tots els canvis fets des de l’última còpia completa.
+
+És més ràpida que la còpia completa i ocupa un espai intermig. La restauració és més senzilla que amb les incrementals, però cada nova còpia diferencial ocupa més espai fins que es fa una nova còpia completa.
+
+Exemples de funcionament
+Còpia completa
+
+Dilluns: còpia completa
+Dimarts: còpia completa
+Dimecres: còpia completa
+
+Si es perd un fitxer dijous, només cal restaurar la còpia completa de dimecres.
+
+Còpia incremental
+
+Dilluns: còpia completa
+Dimarts: còpia incremental
+Dimecres: còpia incremental
+
+Per recuperar un fitxer perdut dijous, cal la còpia completa de dilluns i totes les còpies incrementals fins dimecres.
+
+Còpia diferencial
+
+Dilluns: còpia completa
+Dimarts: còpia diferencial
+Dimecres: còpia diferencial
+
+Si es perd un fitxer dijous, cal la còpia completa de dilluns i l’última còpia diferencial, la de dimecres.
+
+RAID i emmagatzematge
+
+Els sistemes RAID combinen diversos discs perquè funcionin conjuntament, millorant el rendiment i/o la seguretat segons el tipus de RAID utilitzat.
+
+RAID 0 uneix la capacitat i la velocitat de diversos discs, però no ofereix cap protecció: si un disc falla, es perden totes les dades.
+RAID 1 crea una còpia mirall: les dades es dupliquen i, si un disc falla, l’altre continua funcionant.
+RAID 5 i RAID 6 reparteixen les dades i la informació de paritat entre diversos discs, oferint un bon equilibri entre velocitat i seguretat.
+RAID 10 combina la velocitat del RAID 0 amb la seguretat del RAID 1.
+
+És important recordar que RAID no és una còpia de seguretat. Si s’esborren fitxers o un virus afecta les dades, l’error es replica a tots els discs.
+
+Imatge de disc
+
+Una imatge de disc és una còpia exacta de tot un disc o partició, incloent el sistema operatiu, els programes, la configuració i les dades. S’utilitza per clonar equips o restaurar un sistema complet tal com estava en un moment concret.
+
+És molt completa, però requereix molt espai i temps per crear-se. A canvi, permet restaurar un ordinador sencer en molt poc temps.
+
+Snapshot
+
+Un snapshot és una captura instantània de l’estat d’un sistema de fitxers o d’un dispositiu d’emmagatzematge. Normalment depèn de la tecnologia utilitzada (LVM, ZFS, Btrfs, màquines virtuals, etc.) i és molt ràpid de crear, ja que només guarda els canvis fets a partir del moment en què es crea.
+
+Els snapshots són útils per tornar enrere ràpidament o fer proves, però no són una còpia de seguretat segura si es guarden al mateix disc. Si el disc falla, el snapshot també es perd.
+
+Resum final
+
+La còpia de seguretat serveix per protegir les dades guardant-les en un lloc segur.
+La imatge de disc copia tot el sistema exactament com és en un moment concret.
+El snapshot permet tornar enrere ràpidament, però no protegeix contra fallades del mateix disc.
+
+No s’ha de confiar només en snapshots locals com a única protecció. La millor estratègia combina snapshots per recuperacions ràpides i còpies de seguretat externes per protegir-se davant desastres.
+
+1. cp -> Es una copia simple no inteligent nomes transfereix fitxers localment es molt simple de utilitzar pero no optimitzar
+2. rsync -> Es una eina inteligent que nomes copia els fitxers modificats i la sincronitzacio pot ser local o en remot via ssh
+3. dd -> Es una eina per a clonar discs o particions i no es inteligent copia tots els sectors
+
+### Comanda cp
+
+Comanda cp (teoria)
+
+La comanda cp s’utilitza en sistemes operatius Linux i Unix per copiar fitxers i directoris d’una ubicació a una altra. Permet duplicar informació mantenint, si es vol, atributs com permisos, dates i propietari.
+
+Funcionament general
+
+cp copia un o més fitxers cap a un fitxer o directori de destí. Quan el destí ja existeix, el fitxer pot ser sobreescrit segons les opcions utilitzades. Per defecte, cp només copia fitxers; per copiar directoris cal indicar-ho explícitament.
+
+Opcions i paràmetres principals
+Còpia recursiva
+
+Permet copiar directoris sencers amb tots els seus subdirectoris i fitxers. Sense aquesta opció, els directoris no es copien.
+
+Mode interactiu
+
+Fa que el sistema demani confirmació abans de sobreescriure un fitxer existent, evitant pèrdues accidentals d’informació.
+
+Mode forçat
+
+Sobreescriu els fitxers de destí sense demanar confirmació, fins i tot si estan protegits contra escriptura.
+
+Mode detallat
+
+Mostra informació del procés de còpia, indicant quins fitxers s’estan copiant.
+
+Actualització
+
+Només copia els fitxers que són més nous que els del destí o que encara no existeixen, estalviant temps i espai.
+
+Conservació d’atributs
+
+Manté els permisos, el propietari, el grup i les dates originals dels fitxers copiats.
+
+Mode arxiu
+
+Realitza una còpia completa conservant l’estructura, els atributs i els enllaços, i és l’opció més utilitzada per fer còpies de seguretat de directoris.
+
+Gestió d’enllaços
+
+La comanda pot tractar els enllaços simbòlics de diverses maneres:
+
+Copiar l’enllaç com a enllaç
+
+Seguir l’enllaç i copiar el fitxer real
+
+No seguir l’enllaç i conservar-lo tal com és
+
+També permet crear enllaços simbòlics o enllaços durs en lloc de fer una còpia real del fitxer.
+
+Altres funcionalitats
+
+cp pot copiar múltiples fitxers alhora cap a un mateix directori.
+Permet mantenir l’estructura de directoris original quan es copien fitxers individuals.
+Pot limitar la còpia perquè no travessi diferents sistemes de fitxers.
+Es pot utilitzar com a eina bàsica dins d’estratègies de còpies de seguretat simples.
+
+<img width="814" height="502" alt="image" src="https://github.com/user-attachments/assets/3a0f03a7-290c-4bdf-b715-d17e6ff61284" />
+
+### Comanda rsync
+
+La comanda rsync és una eina de Linux/Unix utilitzada per sincronitzar fitxers i directoris entre dues ubicacions, ja sigui dins del mateix sistema, entre diferents discs o entre equips a través de la xarxa. És especialment eficient per a còpies de seguretat i transferències de dades grans.
+
+Funcionament general
+
+rsync compara els fitxers d’origen i destí i només transfereix les diferències, fent que sigui molt més ràpid i eficient que copiar tot el contingut de nou. Pot treballar amb fitxers locals o remots i permet mantenir atributs i permisos dels fitxers originals.
+
+Opcions i paràmetres principals
+Mode recursiu
+
+Permet copiar directoris sencers, incloent subdirectoris i fitxers. Sense aquesta opció, només es copien fitxers individuals.
+
+Conservació d’atributs
+
+Manté propietari, grup, permisos, dates i atributs especials dels fitxers copiats. Això assegura que la còpia sigui exacta a l’original.
+
+Compressió
+
+Redueix la quantitat de dades transferides quan s’utilitza en xarxa, comprimint els fitxers durant la transmissió.
+
+Modes detallats
+
+Permet mostrar informació del procés de sincronització, indicant quins fitxers es transfereixen i quins ja estan actualitzats.
+
+Actualització i sincronització
+
+Només copia fitxers que han canviat o que no existeixen al destí, evitant duplicacions innecessàries i estalviant temps i espai.
+
+Eliminació de fitxers obsolets
+
+Permet eliminar del destí els fitxers que ja no existeixen a l’origen, mantenint les dues ubicacions sincronitzades exactament.
+
+Modes segurs
+
+Pot funcionar a través de connexions segures (per exemple SSH) quan es sincronitzen fitxers entre diferents equips, protegint la informació durant la transferència.
+
+Enllaços i enllaços simbòlics
+
+Rsync pot copiar enllaços simbòlics com a enllaços o bé seguir-los i copiar el contingut real, segons es configuri.
+
+Altres funcionalitats
+
+Permet filtrar fitxers per extensió, nom o directoris específics.
+
+Admet transferències parcials per reprendre còpies interrompudes.
+
+Pot funcionar de manera programada per automatitzar còpies de seguretat regulars.
+
+És molt eficaç per sincronitzar grans quantitats de dades entre servidors, discs locals o sistemes de backup.
 
 
+<img width="831" height="553" alt="image" src="https://github.com/user-attachments/assets/9943cfe0-4f51-4ea0-aef1-a78b1a21185a" />
 
 
+### Comanda dd
+
+La comanda dd és una eina de Linux/Unix utilitzada per copiar i transformar dades a baix nivell, normalment fitxers, discs o dispositius de blocs. És molt potent i flexible, ja que treballa amb dades binàries directament i permet fer còpies exactes sector per sector.
+
+Funcionament general
+
+dd llegeix dades des d’una font i les escriu en un destí especificat, amb la possibilitat de transformar-les durant el procés. Es pot utilitzar per crear imatges de discs, copiar particions, fer còpies de seguretat de dispositius complets o fins i tot escriure fitxers d’arrencada.
+
+Opcions i paràmetres principals
+Input (if)
+
+Defineix el fitxer o dispositiu d’origen d’on s’han de llegir les dades.
+
+Output (of)
+
+Especifica el fitxer o dispositiu de destí on s’escriuran les dades.
+
+Block size (bs)
+
+Permet establir la mida dels blocs de dades llegits i escrits. Ajustar aquesta mida pot millorar el rendiment de la còpia.
+
+Count
+
+Indica quants blocs s’han de copiar des de l’origen. Permet limitar la quantitat de dades copiades.
+
+Skip
+
+Permet saltar un nombre determinat de blocs al començar a llegir de l’origen, útil per treballar amb fragments de discs o fitxers grans.
+
+Seek
+
+Permet saltar blocs al destí abans de començar a escriure, facilitant la còpia parcial dins d’un dispositiu o fitxer.
+
+conv
+
+Permet aplicar transformacions a les dades durant la còpia, com per exemple canviar majúscules/minúscules, convertir entre formats o truncar dades.
+
+Status
+
+Mostra informació del progrés de la còpia, útil en operacions amb grans quantitats de dades.
 
 
+<img width="838" height="402" alt="image" src="https://github.com/user-attachments/assets/4d50189f-63f2-45aa-bcdd-2388e9661969" />
 
 
+## Automatizació de tasques
+
+cron i anacron son 2 eines de automatitzacio que permeten executar tasques periodiques
+
+cron executa tasques programades en una data i hora especifiques si el sistema esta apagat la tasca es perd es ideal per a tasques en dates i hores concretes i per accions especifiques d'un usuari.
+
+anacron es ideal per executar tasques periodiques on no cal una hora i data especific normalment se utilitza per a tasques de manteniment del sistema i no requereix que el sistema estigui obert perque quan se obri ja l'executara
+
+### Cron i Anacron
+
+El cron es guarda a la ruta /etc/crontab i aixi es com es veu:
+
+<img width="840" height="499" alt="image" src="https://github.com/user-attachments/assets/58a9e222-7c9e-4374-b4d8-f117c07f0028" />
+
+Amb aquesta comanda podem especificar desde quin usuari volem entrar i el primer cop que entrem ens dirá en quin editor volem fer-ho.
+
+<img width="570" height="249" alt="image" src="https://github.com/user-attachments/assets/cca679f2-48c8-4ef4-a2bb-5871b48e834d" />
+
+Amb aquesta ruta podem veure tots els binaris del cron.
+
+<img width="452" height="221" alt="image" src="https://github.com/user-attachments/assets/fa38ebd5-4062-4a01-b029-a349e83eb3a6" />
+
+I aquest es el anacron que esta guardat amb aquesta ruta:
+
+<img width="779" height="309" alt="image" src="https://github.com/user-attachments/assets/14754dd3-3d60-4773-9541-e1c5c360df76" />
+
+Ara he programat un script que conté el següent codi:
+
+<img width="804" height="155" alt="image" src="https://github.com/user-attachments/assets/e9615aee-f127-479b-93df-a709b3ace087" />
+
+Li dono permisos de execució
 
 
+<img width="565" height="243" alt="image" src="https://github.com/user-attachments/assets/e69df30a-2dfb-4210-b4c3-1afa00092a24" />
+
+Vaig a Documentos i creo 2 imatges que seran les que es copiaran.
+
+<img width="561" height="157" alt="image" src="https://github.com/user-attachments/assets/76327edb-949e-4eda-b21e-a957350bc5f9" />
+
+Copio el script i el poso al cron.daily
+
+<img width="695" height="122" alt="image" src="https://github.com/user-attachments/assets/c9d60722-7dd5-4792-9d85-efaf871edbc2" />
+
+Finalment comprovo que esta alli
+
+<img width="834" height="302" alt="image" src="https://github.com/user-attachments/assets/3fb8e7b7-73ba-4eb3-ac74-ddabc0fbe133" />
+
+I reemplaçem aquest valor per 1.
+
+<img width="774" height="300" alt="image" src="https://github.com/user-attachments/assets/93cc8bf8-3ade-41a6-95de-a5ae7a255eff" />
+
+## Quotes d'usuari
+
+Que es una quota?
+
+En Linux, una quota és un mecanisme de control d’ús d’espai i fitxers dins d’un sistema de fitxers. Serveix per limitar la quantitat de disc o nombre d’inodes (fitxers) que un usuari o grup pot utilitzar, evitant que una sola persona ocupi tot l’espai i afecti la resta de l’equip.
+
+```
+edquota -u usuari -> veure quotes un usuari
+
+setquota -u usuari -> establir quotes 1 usuari
+
+repquota /dev/sdc1 -> informe quotes de tots els usuaris el que ocupen
+
+quotaon /mnt/dades -> activar
+
+quotaoff /mnt/dades -> desactivar
+
+quotacheck -cug /mnt/dades -> crear arxius per a quotes usuari i grup si no estan per defecte
+```
+
+Per dur a terme aquesta part necesitem instalar el paquet **quota**.
+
+<img width="801" height="534" alt="image" src="https://github.com/user-attachments/assets/14866908-0812-44eb-a86f-ad64ac1cdd42" />
+
+I farem el muntatge de aquesta carpeta permanentment, ademes aquí afegirem usrquota i grpquota per a que puguesim configurar les quotes aqui.
+
+<img width="397" height="123" alt="image" src="https://github.com/user-attachments/assets/a224df27-6d27-4dc3-8aaa-776ac52c2917" />
+
+Fem un reboot i amb aquesta comanda podem comprovar que esta muntat correctament.
 
 
+<img width="837" height="446" alt="image" src="https://github.com/user-attachments/assets/ff25a286-aa6e-40d9-aa32-9eeabef97492" />
+
+Amb aquesta comanda podem generar els 2 arxius per a les quotes.
+
+<img width="612" height="86" alt="image" src="https://github.com/user-attachments/assets/219e9a5a-f28c-47b9-9026-0a3896d57a76" />
+
+I amb aquesta comanda activem les quotes.
+
+<img width="543" height="99" alt="image" src="https://github.com/user-attachments/assets/e6bbfba1-d5fd-4aa2-9f68-f47641d1a4d5" />
+
+Ara farem la quota per al usuari gina.
+
+<img width="523" height="71" alt="image" src="https://github.com/user-attachments/assets/6e52e0c3-f248-4853-9d46-f2ea1f3c1345" />
+
+I li direm el maxim que pot arribar a gastar en espai amb aquella carpeta.
+
+<img width="809" height="113" alt="image" src="https://github.com/user-attachments/assets/16a970ec-450a-4fcb-973f-1ed45008fa2e" />
+
+Amb aquesta comanda podem veure els dies de gracia.
+
+<img width="714" height="286" alt="image" src="https://github.com/user-attachments/assets/6dec0f6d-5b6f-49e7-8f44-616939219c0c" />
+
+Ara entrem desde el usuari gina i anem a la carpeta aquesta.
+
+<img width="554" height="225" alt="image" src="https://github.com/user-attachments/assets/fa49a9ac-7615-41b3-8adb-5c4c08a286a1" />
+
+Podem veure que per al usuari gina ara ens apareix.
+
+<img width="724" height="181" alt="image" src="https://github.com/user-attachments/assets/2e2a8df5-fd57-4539-aab1-b3235fdae6b0" />
+
+Amb aquesta comanda crearem un arxiu.
+
+<img width="730" height="92" alt="image" src="https://github.com/user-attachments/assets/7b93d97d-894a-458b-b38a-e420f35da5f0" />
+
+I tornem a crear un altre arxiu per a ocupar espai amb aquesta carpeta.
 
 
+<img width="755" height="102" alt="image" src="https://github.com/user-attachments/assets/a849984a-d0b9-45f9-9c52-cbcc889b2f21" />
+
+Si observem estem apunt de excedirnos del limit.
+
+<img width="727" height="174" alt="image" src="https://github.com/user-attachments/assets/72db7ce4-aa2b-4d58-a78e-d833ac4da60a" />
+
+Finalment crearem un altre arxiu
+
+<img width="755" height="170" alt="image" src="https://github.com/user-attachments/assets/12bde2a5-f469-4b3a-999d-bfdf715827eb" />
+
+I aquest no se ha afegit ja que ens hem excedit.
 
 
+<img width="576" height="271" alt="image" src="https://github.com/user-attachments/assets/0bfb4120-948d-4b66-9b3c-3df60b33bfa4" />
 
 
+I si creo un altre arxiu ja no hem deixará.
 
+<img width="755" height="174" alt="image" src="https://github.com/user-attachments/assets/5fc4fba2-33b4-40b7-b7a7-95bc1069d72f" />
 
+Amb aquesta comanda podem modificar els dies de gracia.
 
-
-
-
+<img width="807" height="247" alt="image" src="https://github.com/user-attachments/assets/d3aa6cf9-5d9b-41c1-921e-fa792c834845" />
 
 
