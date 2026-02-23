@@ -1,5 +1,15 @@
 ### Sprint 2: Instal·lació, Configuració de Programari de Base i Gestió de Fitxers
 ## Sistemes de fitxers i particions
+## Mida sector
+
+El sector és la unitat mínima física del disc on es guarden les dades i per defecte són **512 bytes**. No es pot cambiar la mida.
+
+## Mida block
+
+És la unitat mínima lògica on es guarden les dades al SO, per defecte són 4096 bytes. I es pot canviar la mida quan es formata el disc.
+
+La mida del block o cluster i el sistema de fitxers pot ser diferent a cada partició del mateix disc.
+
 - **Fragmentació interna:** Es produeix quan un fitxer s’emmagatzema dins d’un bloc però no l’arriba a omplir completament, deixant part de l’espai sense utilitzar. En el cas del nostre exemple, només s’estan utilitzant 8 bytes dels 4096 que permet el bloc, de manera que la resta queda desaprofitada i això genera fragmentació.
 <img width="336" height="113" alt="image" src="https://github.com/user-attachments/assets/35650f8a-d166-4165-9053-927b217c0a99" />
 
@@ -165,6 +175,390 @@ Per filtrar un procés, podem utilitzar grep en combinació amb altres eines.
 Podem filtrar per els processos del usuari alumne
 
 <img width="589" height="435" alt="h1" src="https://github.com/user-attachments/assets/8ac36569-9852-4e5d-9355-df4eb00ada66" />
+
+## Fitxers importants
+
+* En Linux, la informació d'usuaris i grups es gestiona de manera centralitzada mitjançant fitxers de configuració de text ubicats dins del directori /etc.
+
+Explicació **/etc/passwd**:
+<img width="776" height="525" alt="image" src="https://github.com/user-attachments/assets/27e3f2cf-1738-4bf6-bed6-2131dc9d086b" />
+
+Cada línia representa un usuari i conté 7 camps separats per dos punts:
+
+**nom_usuari:x:UID:GID:GECOS:directori_home:shell**
+
+Descripció detallada de cada camp
+
+1. **nom_usuari**
+
+    Exemple: root, anna, mysql
+
+    Descripció:
+
+        Nom únic que identifica l'usuari al sistema
+
+        És el que s'utilitza per iniciar sessió
+
+        Normalment té un màxim de 32 caràcters
+
+2. **x (camp de contrasenya)**
+
+    Exemple: x, *, !
+
+    Descripció:
+
+        x indica que la contrasenya està emmagatzemada a /etc/shadow
+
+        * o ! vol dir que el compte està blocat
+
+        Si està buit, l'usuari no té contrasenya (insicur)
+
+3. **UID (User ID)**
+
+    Exemple: 0, 1000, 33
+
+    Descripció:
+
+        Número d'identificació únic de l'usuari
+
+        0 = usuari root (superusuari)
+
+        1-999 = usuaris del sistema (serveis)
+
+        1000+ = usuaris normals
+
+4. **GID (Group ID)**
+
+    Exemple: 0, 1000, 33
+
+    Descripció:
+
+        Número del grup principal de l'usuari
+
+        Defineix els permisos per defecte per a nous arxius
+
+5. **GECOS (Informació addicional)**
+
+    Exemple: Anna Garcia,,,, Pere Lopez,Vendes,555-1234
+
+    Descripció:
+
+        Informació opcional sobre l'usuari
+
+        Normalment només s'inclou el nom complet
+
+        Format: Nom complet,Despatx,Telefon,Altres
+
+6. **directori_home**
+
+    Exemple: /home/anna, /root, /var/www
+
+    Descripció:
+
+        Directori personal de l'usuari
+
+        On s'emmagatzemen els seus arxius personals
+
+        Directori per defecte en iniciar sessió
+
+7. **shell**
+
+    Exemple: /bin/bash, /bin/sh, /usr/sbin/nologin
+
+    Descripció:
+
+        Intèrpret d'ordres que s'executa en iniciar sessió
+
+        /bin/bash = shell Bash normal
+
+        /usr/sbin/nologin o /bin/false = no permet inici de sessió (comptes de servei)
+
+Explicació **/etc/shadow**:
+
+<img width="582" height="487" alt="image" src="https://github.com/user-attachments/assets/9d9b8ba9-316e-4850-a2d1-e4d86760d877" />
+
+L'arxiu /etc/shadow conté la informació de les contrasenyes dels usuaris i les polítiques d'expiració. És un arxiu segur que només pot llegir l'usuari root.
+
+Cada línia representa un usuari i conté 9 camps separats per dos punts:
+
+**nom_usuari:contrasenya_encryptada:darrers_canvis:minims:maxims:avis:inactiu:caducitat:camp_reserva**
+
+Descripció detallada de cada camp
+
+1. **nom_usuari**
+
+    Exemple: root, anna, mysql
+
+    Descripció:
+
+        Nom de l'usuari (ha de coincidir amb /etc/passwd)
+
+        Serveix com a clau d'enllaç entre els dos arxius
+
+2. **contrasenya_encryptada**
+
+    Exemple: $6$rounds=5000$t..., *, !!
+
+    Descripció:
+
+        Contrasenya encryptada amb hash
+
+        * o !! = compte blocat o sense contrasenya
+
+        Format: $algoritme$salt$hash
+
+        Algoritmes comuns: $1$ (MD5), $5$ (SHA-256), $6$ (SHA-512)
+
+3. **darrers_canvis (last change)**
+
+    Exemple: 19157, 0
+
+    Descripció:
+
+        Data de l'últim canvi de contrasenya en dies des de l'1/1/1970
+
+        0 = ha de canviar-la en el proper login
+
+        19157 = 19,157 dies des de l'1/1/1970
+
+4. **minims (minimum days)**
+
+    Exemple: 0, 7
+
+    Descripció:
+
+        Dies mínims que han de passar abans de poder canviar la contrasenya
+
+        0 = es pot canviar en qualsevol moment
+
+5. **maxims (maximum days)**
+
+    Exemple: 99999, 90
+
+    Descripció:
+
+        Dies màxims que la contrasenya és vàlida
+
+        99999 = quasi etern (273 anys)
+
+        90 = ha de canviar-la cada 90 dies
+
+6. **avis (warning days)**
+
+    Exemple: 7, 0
+
+    Descripció:
+
+        Quants dies abans de la caducitat s'envia un avís
+
+        7 = avisa 7 dies abans que caduqui
+
+7. **inactiu (inactive days)**
+
+    Exemple: -1, 30
+
+    Descripció:
+
+        Dies de gràcia després de caducar abans que el compte es desactivi
+
+        -1 = sense període d'inactivitat
+
+8. **caducitat (expiration date)**
+
+    Exemple: ``, 20000
+
+    Descripció:
+
+        Data absoluta de caducitat del compte en dies des de l'1/1/1970
+
+        Buit = el compte no caduca mai
+
+9. **camp_reserva (reserved field)**
+
+    Exemple: (buit)
+
+    Descripció:
+
+        Camp reservat per a ús futur
+
+        Normalment està buit
+
+Explicació **/etc/group**:
+
+<img width="632" height="449" alt="image" src="https://github.com/user-attachments/assets/8028595d-5b21-4d19-a651-adb8bacd4545" />
+
+L'arxiu /etc/group conté la informació dels grups del sistema i els seus membres. Defineix els grups d'usuaris i les seves relacions.
+
+Estructura de cada línia
+
+Cada línia representa un grup i conté 4 camps separats per dos punts:
+
+**nom_grup:contrasenya_grup:GID:llista_membres**
+
+Descripció detallada de cada camp
+
+1. **nom_grup**
+
+    Exemple: root, users, sudo, www-data
+
+    Descripció:
+
+        Nom del grup
+
+        Ha de ser únic al sistema
+
+        Normalment en minúscules
+
+2. **contrasenya_grup**
+
+    Exemple: x, *
+
+    Descripció:
+
+        x indica que la contrasenya del grup està a /etc/gshadow
+
+        * o buit = no hi ha contrasenya de grup
+
+        Rarament s'utilitza en sistemes moderns
+
+3. **GID (Group ID)**
+
+    Exemple: 0, 100, 1000, 33
+
+    Descripció:
+
+        Número d'identificació únic del grup
+
+        0 = grup root
+
+        1-999 = grups del sistema
+
+        1000+ = grups d'usuaris normals
+
+4. **llista_membres**
+
+    Exemple: anna,pere,marta, root, (buit)
+
+    Descripció:
+
+        Llista d'usuaris que són membres del grup, separats per comes
+
+        No inclou l'usuari que té aquest grup com a grup primari
+
+        Buit = cap usuari addicional al grup
+
+Explicació **/etc/gshadow**:
+
+<img width="585" height="467" alt="image" src="https://github.com/user-attachments/assets/a0ae2deb-1d6b-417b-98f0-4ca6a5ea08e4" />
+
+L'arxiu **/etc/gshadow** conté la informació segura dels grups, incloent contrasenyes de grup i administradors. És la contrapart segura de **/etc/group**.
+
+Estructura de cada línia
+
+Cada línia representa un grup i conté 4 camps separats per dos punts:
+
+**nom_grup:contrasenya_encryptada:administradors:membres**
+
+Descripció detallada de cada camp
+
+1. **nom_grup**
+
+    Exemple: root, sudo, developers
+
+    Descripció:
+
+        Nom del grup (ha de coincidir amb /etc/group)
+
+        Serveix com a clau d'enllaç entre els dos arxius
+
+2. **contrasenya_encryptada**
+
+    Exemple: !, $6$rounds=5000$..., *
+
+    Descripció:
+
+        Contrasenya encryptada per canviar al grup amb newgrp
+
+        ! o * = no hi ha contrasenya de grup
+
+        Contrasenya vàlida = hash encryptat
+
+        Rarament s'utilitza en sistemes moderns
+
+3. **administradors**
+
+    Exemple: anna,root, pere, (buit)
+
+    Descripció:
+
+        Llista d'usuaris que poden gestionar el grup
+
+        Poden afegir/eliminar membres i canviar la contrasenya del grup
+
+        Separats per comes
+
+4. **membres**
+
+    Exemple: marta,jordi, user1,user2, (buit)
+
+    Descripció:
+
+        Llista d'usuaris que són membres del grup
+
+        Ha de coincidir amb el camp de membres de /etc/group
+
+        Separats per comes
+
+## ACL
+
+### Importància de les ACL a Ubuntu
+
+Raons principals per utilitzar ACL
+
+1. Flexibilitat en gestió de permisos
+
+    Superen les limitacions del model usuari/grup/altres
+
+    Permeten assignar múltiples usuaris i grups al mateix recurs
+
+    Ofereixen control granular d'accés
+
+2. Escalabilitat en entorns complexos
+
+    Necessàries en sistemes amb múltiples usuaris i grups
+
+    Essencials en servidors compartits
+
+    Importants en entorns corporatius
+
+3. Seguretat més precisa
+
+    Permeten implementar polítiques d'accés detallades
+
+    Milloren el principi de mínim privilegi
+
+    Faciliten l'auditoria d'accés
+
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/7cb29bbe-5f43-481b-90b8-fcdda4e50091" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
