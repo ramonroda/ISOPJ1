@@ -34,4 +34,14 @@ Comprobem que se ha generat al tail
 
 <img width="948" height="436" alt="unnamed" src="https://github.com/user-attachments/assets/162a8df9-ebe9-4e8b-aa19-0d6293066274" />
 
+ara al fixer 50-default.conf editem la configuracio de mail per a que cuan surti un log de err(error) el envie mail.log.
+
+<img width="948" height="436" alt="unnamed" src="https://github.com/user-attachments/assets/162a8df9-ebe9-4e8b-aa19-0d6293066274" />
+
+Ara enviem  un log notice a prova mireia 2  
+<img width="653" height="23" alt="image" src="https://github.com/user-attachments/assets/587810e2-8527-4ee0-b6b8-0e139bcbdfec" />
+
+comprobem que arriba al tail 
+
+
 
