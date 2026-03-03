@@ -37,11 +37,69 @@ Comprobem que se ha generat al tail
 ara al fixer 50-default.conf editem la configuracio de mail per a que cuan surti un log de err(error) el envie mail.log.
 
 <img width="948" height="436" alt="unnamed" src="https://github.com/user-attachments/assets/162a8df9-ebe9-4e8b-aa19-0d6293066274" />
+ al modifica el fixer 50-default.conf hem de renciar el servei rsyslog
+ 
+ <img width="569" height="24" alt="image" src="https://github.com/user-attachments/assets/abf42701-4264-4f0f-b77e-01f0b9e4f384" />
 
 Ara enviem  un log notice a prova mireia 2  
 <img width="653" height="23" alt="image" src="https://github.com/user-attachments/assets/587810e2-8527-4ee0-b6b8-0e139bcbdfec" />
 
 comprobem que arriba al tail 
+
+<img width="524" height="134" alt="Captura de pantalla de 2026-03-02 12-21-07" src="https://github.com/user-attachments/assets/5d13f1b1-83cd-42dd-af02-3ef3ac7c96ab" />
+
+Ara si fem un cat /var/log/mail.log | grep prova, podem comprobar que surt prova mireia pro no prova mireia 2 ja que hem configurat que nomes guarde logs de error 
+
+<img width="672" height="86" alt="Captura de pantalla de 2026-03-02 12-21-16" src="https://github.com/user-attachments/assets/2ddfa018-6d8f-4f68-8941-8b4376c9e42f" />
+
+Ara fiquem mail.err la diferencia en tre fer mail.=err es que ara guardara tant els logs de error com el logs que tingen un problema mes greu.
+
+<img width="699" height="93" alt="Captura de pantalla de 2026-03-02 12-25-28" src="https://github.com/user-attachments/assets/6de13fc1-9a22-4a45-9abd-abcd666b4ce3" />
+
+Ara enviem un log de err com a mireia prova 3
+
+<img width="569" height="24" alt="image" src="https://github.com/user-attachments/assets/9328f7e6-2f0a-4191-acc1-f2c67050d291" />
+
+comprovem que el log surt al tail
+
+<img width="478" height="87" alt="Captura de pantalla de 2026-03-02 12-24-17" src="https://github.com/user-attachments/assets/4a70bdaa-86e3-4e66-9e5d-cbccd0b92ef6" />
+
+ara comprobem que al fixer mail .log se agi creat
+
+<img width="705" height="109" alt="Captura de pantalla de 2026-03-02 12-24-23" src="https://github.com/user-attachments/assets/59063717-03e2-4a2d-a54d-0383ea9c6537" />
+
+Ara enviem com a prova mireeia 5 un log crit 
+
+<img width="648" height="23" alt="image" src="https://github.com/user-attachments/assets/1ddf6db2-3cbd-48dc-b264-6cf86b24da15" />
+
+
+ara comprobem que al fixer mail.log surte ja que crit es mes greu que err
+
+<img width="596" height="96" alt="image" src="https://github.com/user-attachments/assets/61550a00-7914-4c9d-910b-96a20fe45e15" />
+
+Ara podem fer que tots els logs critics ariben al fixe mireia.log
+
+<img width="556" height="34" alt="image" src="https://github.com/user-attachments/assets/abd0d8d2-4e7b-4719-9b72-5e0af00b56e4" />
+
+Enviem com cron un error critic 
+
+<img width="648" height="126" alt="Captura de pantalla de 2026-03-02 12-28-46" src="https://github.com/user-attachments/assets/fc133a56-cf7c-42ba-a8d2-b7c3e3736192" />
+
+fem un cat a mireia.log
+
+<img width="652" height="86" alt="Captura de pantalla de 2026-03-02 12-29-00" src="https://github.com/user-attachments/assets/4b08a317-b4f8-448e-b6c4-787f0ff2bb36" />
+
+i comprobem que a arribat el log
+
+### journalctl
+Amb la opcio -p podem filtra per el tipus de log 
+
+<img width="921" height="324" alt="Captura de pantalla de 2026-03-02 12-30-48" src="https://github.com/user-attachments/assets/fa59fb05-740e-4fea-9298-60c35e85a3e5" />
+
+amb la opcio --facility podem filtra per servei
+
+<img width="705" height="198" alt="Captura de pantalla de 2026-03-02 12-33-20" src="https://github.com/user-attachments/assets/f37bed72-8488-4c38-b2f4-dc31bef4b67a" />
+
 
 
 
