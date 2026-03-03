@@ -100,6 +100,19 @@ amb la opcio --facility podem filtra per servei
 
 <img width="705" height="198" alt="Captura de pantalla de 2026-03-02 12-33-20" src="https://github.com/user-attachments/assets/f37bed72-8488-4c38-b2f4-dc31bef4b67a" />
 
+### Part 2
+#### Servidor (reb els logs)
 
+<img width="745" height="419" alt="image" src="https://github.com/user-attachments/assets/4be29713-8da3-4a7f-a78a-c2db8d6a884d" />
+
+<img width="745" height="419" alt="Captura de pantalla de 2026-03-03 13-55-03" src="https://github.com/user-attachments/assets/4c2b80e6-a331-44f5-8995-9202134e99a1" />
+
+
+
+<img width="726" height="258" alt="Captura de pantalla de 2026-03-03 13-55-58" src="https://github.com/user-attachments/assets/66d24f86-6fa1-4aed-bbf5-cbc59fb05321" />
+
+<img width="556" height="106" alt="Captura de pantalla de 2026-03-03 13-56-13" src="https://github.com/user-attachments/assets/103e3c94-1209-40ff-807c-59b360c9580d" />
+
+<img width="877" height="164" alt="image" src="https://github.com/user-attachments/assets/f2e33e07-a6b0-47d7-8793-5915213da61c" />
 
 
