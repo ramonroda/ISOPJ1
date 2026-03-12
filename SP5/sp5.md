@@ -132,7 +132,36 @@ Comprobem que es veuen al servidor
 
 <img width="726" height="138" alt="Captura de pantalla de 2026-03-03 14-06-04" src="https://github.com/user-attachments/assets/b9e3c0dc-6692-4163-8095-07d6831f962b" />
 
+### SERVIDOR D'ACTUALITZACIONS
+#Server
+Instalem l'apache i el mirror
 
+<img width="464" height="71" alt="image" src="https://github.com/user-attachments/assets/8d599612-de9a-4b44-a78c-10ece19a25c6" />
 
+<img width="464" height="82" alt="image" src="https://github.com/user-attachments/assets/63337d24-0b0a-4dc0-9964-1e0ab68c6920" />
 
+Despres comentem els repositoris que no volem que s'instalen, i posem el que si que volem que es descarregue
 
+<img width="678" height="635" alt="image" src="https://github.com/user-attachments/assets/e6ca679d-16b8-48b9-ac46-ead86b18a7ef" />
+
+I amb "apt-mirror" els descarreguem
+<img width="483" height="77" alt="image" src="https://github.com/user-attachments/assets/2dd2332b-9178-469a-ad6c-0ad25f48b15e" />
+
+Enllaç simbolic
+
+<img width="832" height="122" alt="image" src="https://github.com/user-attachments/assets/0c090fe8-88a7-4359-850f-b912d0315ec3" />
+
+# CLIENT
+A l'archiu "/etc/apt/sources.list" posem el paquet
+
+<img width="783" height="608" alt="image" src="https://github.com/user-attachments/assets/3a492b68-f86d-4f0f-89d7-2d43c72328c7" />
+
+Executem la seguent comanda
+
+<img width="882" height="183" alt="image" src="https://github.com/user-attachments/assets/d4ca856a-c8b7-4b1f-bc45-a5d8083cec40" />
+
+<img width="924" height="251" alt="image" src="https://github.com/user-attachments/assets/645af9ca-e754-4a8c-8100-960dc54f41b0" />
+
+<img width="878" height="513" alt="image" src="https://github.com/user-attachments/assets/d424bc03-5720-4ca5-91f1-1615b90e3fd9" />
+
+<img width="462" height="383" alt="image" src="https://github.com/user-attachments/assets/8eec2b10-0dad-487a-95ca-5425a88b5060" />
