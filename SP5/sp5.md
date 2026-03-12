@@ -132,8 +132,8 @@ Comprobem que es veuen al servidor
 
 <img width="726" height="138" alt="Captura de pantalla de 2026-03-03 14-06-04" src="https://github.com/user-attachments/assets/b9e3c0dc-6692-4163-8095-07d6831f962b" />
 
-### SERVIDOR D'ACTUALITZACIONS
-#Server
+# SERVIDOR D'ACTUALITZACIONS
+### Server
 Instalem l'apache i el mirror
 
 <img width="464" height="71" alt="image" src="https://github.com/user-attachments/assets/8d599612-de9a-4b44-a78c-10ece19a25c6" />
@@ -151,7 +151,7 @@ Enllaç simbolic
 
 <img width="832" height="122" alt="image" src="https://github.com/user-attachments/assets/0c090fe8-88a7-4359-850f-b912d0315ec3" />
 
-# CLIENT
+### CLIENT
 A l'archiu "/etc/apt/sources.list" posem el paquet
 
 <img width="783" height="608" alt="image" src="https://github.com/user-attachments/assets/3a492b68-f86d-4f0f-89d7-2d43c72328c7" />
@@ -165,3 +165,30 @@ Executem la seguent comanda
 <img width="878" height="513" alt="image" src="https://github.com/user-attachments/assets/d424bc03-5720-4ca5-91f1-1615b90e3fd9" />
 
 <img width="462" height="383" alt="image" src="https://github.com/user-attachments/assets/8eec2b10-0dad-487a-95ca-5425a88b5060" />
+
+# EXERCISI: Fer el mateix per un altre repositori
+
+Jo ho fare amb visual studio code, primer al fitxer **nano /etc/apt/mirror.list** posem la seguent linea, deb deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main i guardem
+
+<img width="757" height="668" alt="image" src="https://github.com/user-attachments/assets/e199884b-ec15-4d9c-9bae-a3edd632ab07" />
+
+Descarreguem el repositori al servidor "apt-mirror"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
