@@ -65,9 +65,6 @@
 
 * Com a nom del punt de restauració, podem posar aquest mateix com a exemple i crear-lo.
 
-<img width="394" height="185" alt="12" src="https://github.com/user-attachments/assets/09084838-8a55-490d-9c40-
-4b4df2ce6b01" />
-
 <img width="337" height="113" alt="14" src="https://github.com/user-attachments/assets/c58ce58f-003e-48e4-9877-e330d4c3d8bd" />
 
 ## Pas 9 – Fer un canvi (programa)
@@ -82,15 +79,7 @@
 
 <img width="402" height="218" alt="16" src="https://github.com/user-attachments/assets/f25ae7c3-5f47-49f2-bad3-6c4c519a7a86" />
 
-* Seleccionarem el punt de restauració que havíem creat, que en aquest cas és l’únic disponible.
-
-<img width="557" height="207" alt="17" src="https://github.com/user-attachments/assets/0635db65-b315-41bd-a31f-ad303345cab3" />
-
-* Confirmarem que tot siga correcte abans de continuar.
-
-<img width="522" height="249" alt="18" src="https://github.com/user-attachments/assets/70ba373e-da88-414a-898c-8e6915f3bc12" />
-
-* Després deixarem que el sistema carregue i complete la restauració.
+* Seleccionarem el punt de restauració que havíem creat, que en aquest cas és l’únic disponible. I confirmarem que tot siga correcte abans de continuar. Després deixarem que el sistema carregue i complete la restauració.
 
 <img width="495" height="204" alt="19" src="https://github.com/user-attachments/assets/f5a1ece6-6db0-49e8-b199-014f5b896f18" />
 
@@ -101,12 +90,6 @@
 <img width="334" height="157" alt="21" src="https://github.com/user-attachments/assets/1af29be1-12d6-4eb3-bd97-f10c989ee62f" />
 
 # Fase 3 – Llicències de Windows
-
-## Pas 11 – Obrir Configuració → Sistema → Activació
-
-* Entre a **Configuració** i vaig a **Sistema** ① → **Activació** ② per revisar l’estat d’activació de Windows.
-
-<img width="444" height="224" alt="22" src="https://github.com/user-attachments/assets/76d1cc0b-e152-42f7-8611-99e5ee7306a8" />
 
 ## Pas 12 – Veure si Windows està activat
 
@@ -151,24 +134,13 @@ Com es pot observar a la captura anterior, el sistema **no està activat**.
 
 * Al cercador de Windows escric **"cmd"** (Símbol del sistema) i seleccione **"Ejecutar como administrador"** per disposar dels permisos necessaris per executar `bcdedit`.
 
-<img width="356" height="200" alt="25" src="https://github.com/user-attachments/assets/9624442f-1a3a-411f-8ed7-5060a2e0af2c" />
+<img width="351" height="202" alt="image" src="https://github.com/user-attachments/assets/a515bf08-4063-464a-b274-16caff5aaa9d" />
 
 ## Pas 17 – Executar bcdedit
 
 * Execute la comanda `bcdedit`, que mostra tota la configuració del gestor d’arrencada de Windows (**BCD – Boot Configuration Data**).
 
 <img width="507" height="516" alt="26" src="https://github.com/user-attachments/assets/f94c5439-b147-4efe-acdc-a5714d235703" />
-
-## Pas 18 – Identificar els blocs Boot Manager i Boot Loader
-
-A la informació que retorna `bcdedit` es poden distingir dos blocs principals:
-
-**Bloc 1 – Administrador d’arrencada de Windows (Boot Manager):**
-
-
-
-
----
 
 ## Pas 19 – Interpretar dades concretes
 
