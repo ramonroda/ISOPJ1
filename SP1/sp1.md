@@ -252,44 +252,48 @@ Com es pot observar a la captura anterior, el sistema **no està activat**.
 
 ## Pas 29 – Comandes bàsiques (provades)
 
-* Execute `dir` per veure els fitxers i carpetes del directori `C:\Users\nicksist\Documents`. En el llistat apareix el fitxer **prova.txt**, que havia creat prèviament.
+* Execute `dir` per veure els fitxers i carpetes del directori `C:\Users\RamonRoda\Documents`. En el llistat apareix el fitxer **ramon.txt**, que havia creat prèviament.
 
-<img width="421" height="134" alt="33" src="https://github.com/user-attachments/assets/38f7eaf4-3d77-4c4f-881a-9c91f1321915" />
+<img width="460" height="203" alt="image" src="https://github.com/user-attachments/assets/39b75ab4-9197-4362-9298-dc4e60c5468c" />
 
-* Després execute `cd C:\Users\nicksist\Documents` per situar-me en la carpeta de documents, `mkdir prova` per crear una carpeta nova i `echo hola > fitxer.txt` per generar un fitxer de text.
 
-<img width="385" height="32" alt="34" src="https://github.com/user-attachments/assets/1c8f3c56-b9f5-493b-8d90-597dfeb8470b" />
+* Després execute `cd C:\Users\RamonRoda\Documents` per situar-me en la carpeta de documents, `mkdir ramon` per crear una carpeta nova i `echo hola > fitxer.txt` per generar un fitxer de text.
 
-<img width="396" height="135" alt="35" src="https://github.com/user-attachments/assets/f02fd037-9dd8-470a-8c26-37943177587c" />
+<img width="397" height="198" alt="image" src="https://github.com/user-attachments/assets/e63b004a-9783-447d-bba5-b56ad7f59802" />
+
 
 * Torne a executar `dir` per comprovar que tant la carpeta **prova** com el fitxer **fitxer.txt** (14 bytes) s’han creat correctament.
 
-<img width="436" height="344" alt="36" src="https://github.com/user-attachments/assets/616d9ff2-0fcd-4287-a372-1c101f1999c0" />
+<img width="456" height="218" alt="image" src="https://github.com/user-attachments/assets/a56f7a93-f165-40a3-9997-cc44cb19f497" />
+
 
 * Finalment, execute `del fitxer.txt` per esborrar el fitxer i torne a llançar `dir` per verificar que ja no figura en el llistat.
 
-<img width="429" height="328" alt="37" src="https://github.com/user-attachments/assets/44bc395e-ef66-4132-9c6d-1c1be8b3b665" />
+<img width="386" height="192" alt="image" src="https://github.com/user-attachments/assets/66d6e7d7-6e16-48f6-8d1f-90c2ff6ccaa6" />
 
 
 ## Pas 30 – Comandes útils del sistema
 
 * `tasklist` → Mostra tots els **processos que estan actius** al sistema, amb el seu PID, la sessió i el consum de memòria. S’hi poden veure processos com `System`, `svchost.exe`, `wininit.exe`, etc.
 
-<img width="542" height="309" alt="38" src="https://github.com/user-attachments/assets/95639aa0-9639-4880-9a83-2dd0408eaffe" />
+<img width="571" height="306" alt="image" src="https://github.com/user-attachments/assets/edb795c7-32bc-4662-805b-73d13b167ccc" />
+
 
 * `taskkill /IM notepad.exe /F` → Tanca forçadament el procés **Notepad**. El sistema indica: *"se terminó el proceso Notepad.exe con PID 7540"*.
 
-<img width="422" height="34" alt="39" src="https://github.com/user-attachments/assets/ef553a8e-db5a-4920-a73d-5e7facfc283e" />
+<img width="443" height="107" alt="image" src="https://github.com/user-attachments/assets/cdcb2eeb-55e1-4d99-bec4-91f0bf4fe4b6" />
 
 * `systeminfo` → Ofereix informació detallada del sistema, com ara el nom de l’equip (**DESKTOP-EQI60GD**), el sistema operatiu (**Windows 10 Pro**), el fabricant (**VirtualBox**), la memòria, el processador, la data d’instal·lació, etc.
 
-<img width="768" height="693" alt="40" src="https://github.com/user-attachments/assets/2a9549a9-c1cf-49e6-a4f3-e500aef72660" />
+<img width="780" height="285" alt="image" src="https://github.com/user-attachments/assets/f3529cbc-5274-441c-a530-299621ceb698" />
+
 
 * `hostname` i `whoami` → `hostname` mostra el nom de l’ordinador (**DESKTOP-EQI6OGD**) i `whoami` indica l’usuari actual (**DESKTOP-EQI6OGD\nicksist**).
 
-<img width="217" height="32" alt="41" src="https://github.com/user-attachments/assets/d10094d4-c2e9-495e-99f5-9024d3281e14" />
+<img width="298" height="35" alt="image" src="https://github.com/user-attachments/assets/51f5f026-5310-419d-bfa8-94346dc11a66" />
 
-<img width="200" height="32" alt="42" src="https://github.com/user-attachments/assets/46a435b3-d3bd-44fb-8303-28304011caee" />
+<img width="284" height="47" alt="image" src="https://github.com/user-attachments/assets/10991041-f8a4-479e-a552-27544c77ea3a" />
+
 
 ## Pas 31 – Comandes de xarxa
 
@@ -297,27 +301,32 @@ Com es pot observar a la captura anterior, el sistema **no està activat**.
 
   `ping google.com` envia paquets a Google i el resultat verifica la connexió a Internet amb **0% de pèrdua** i un temps de resposta aproximat de 12 ms.
 
-<img width="474" height="174" alt="43" src="https://github.com/user-attachments/assets/706b45f9-5982-43fb-bd5f-51db33b3ede4" />
+<img width="553" height="233" alt="image" src="https://github.com/user-attachments/assets/f856db7a-c594-44b9-a6a4-bcd9aaf04714" />
 
-<img width="467" height="184" alt="44" src="https://github.com/user-attachments/assets/d851e4eb-374e-41a6-ba1c-825013d07a85" />
+<img width="478" height="185" alt="image" src="https://github.com/user-attachments/assets/9d7ec058-8b9f-45c3-8c67-abd86bdb0320" />
+
 
 * `netstat -an` ensenya totes les **connexions de xarxa obertes** del sistema, tant les que estan en estat **LISTENING** com les que apareixen com a **ESTABLISHED**. És una eina útil per detectar ports oberts o connexions actives.
 
-<img width="468" height="311" alt="45" src="https://github.com/user-attachments/assets/f325c536-5684-4aba-83f0-27fb022e85bb" />
+<img width="480" height="282" alt="image" src="https://github.com/user-attachments/assets/c568df49-95ff-4d09-b17e-40b1c30fe1dc" />
+
 
 ## Pas 32 – Comandes interessants (avançades)
 
-* `tree` → Representa l’estructura de carpetes en forma d’arbre a partir del directori actual. En aquest cas es poden veure subcarpetes de l’usuari Eros, com ara `Desktop`, `Documents`, `Downloads`, `prova`, etc.
+* `tree` → Representa l’estructura de carpetes en forma d’arbre a partir del directori actual. En aquest cas es poden veure subcarpetes de l’usuari RamonRoda, com ara `Desktop`, `Documents`, `Downloads`, `prova`, etc.
 
-<img width="310" height="298" alt="46" src="https://github.com/user-attachments/assets/5669036b-bbde-4a39-9138-cd2116a9a915" />
+<img width="323" height="320" alt="image" src="https://github.com/user-attachments/assets/4f7dee9d-8460-425d-9816-ae14636e1546" />
+
 
 * `cls` → Esborra completament el contingut visible de la terminal i deixa el cursor a l’inici.
 
-<img width="188" height="17" alt="47" src="https://github.com/user-attachments/assets/ac940c19-ad5b-431c-a513-904aff890897" />
+<img width="237" height="68" alt="image" src="https://github.com/user-attachments/assets/ce362620-f858-440b-93e3-568b24df9df6" />
+
 
 * `help` → Mostra l’ajuda de PowerShell amb informació sobre cmdlets, funcions i conceptes disponibles.
 
-<img width="739" height="464" alt="48" src="https://github.com/user-attachments/assets/84427f0c-e643-4034-aadf-42ac1662a5a6" />
+<img width="640" height="259" alt="image" src="https://github.com/user-attachments/assets/68149843-2c11-4a10-9c73-84658edcc369" />
+
 
 > **Nota sobre `shutdown /s /t 0`:** Aquesta comanda apaga l’equip de manera immediata (temps = 0 segons). No he fet captura perquè això hauria apagat la màquina virtual durant la sessió.
 
