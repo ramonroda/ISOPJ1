@@ -347,17 +347,16 @@ Com es pot observar a la captura anterior, el sistema **no està activat**.
 
 * A la pàgina oficial `code.visualstudio.com/Download` trie la versió per a **Windows (Windows 10, 11)** i comence la descàrrega de l’instal·lador.
 
-<img width="879" height="377" alt="50" src="https://github.com/user-attachments/assets/7c24bf27-8564-4548-ac65-b1f0592c0984" />
+<img width="872" height="400" alt="image" src="https://github.com/user-attachments/assets/64f787ca-5321-4e2d-9ff2-7c8dbb864cc9" />
+
 
 ## Pas 35 – Instal·lar seguint l'assistent
 
 * Continue l’assistent d’instal·lació. Primer accepte l’**acord de llicència** de Microsoft per a VS Code i polse **Següent**.
 
-<img width="589" height="459" alt="51" src="https://github.com/user-attachments/assets/d6596886-2277-43e2-b9f0-526790578ae7" />
+<img width="592" height="458" alt="image" src="https://github.com/user-attachments/assets/1deba4d3-c9c9-4852-8969-6c06cc4b0843" />
 
-* Després confirme la **carpeta de destinació** on s’instal·larà VS Code: `C:\Users\Eros\AppData\Local\Programs\Microsoft VS Code` (amb un mínim requerit de 576,5 MB).
-
-<img width="587" height="208" alt="52" src="https://github.com/user-attachments/assets/2269871a-4e1d-4f3b-b9c2-412f64091f50" />
+* Després confirme la **carpeta de destinació** on s’instal·larà VS Code: `C:\Users\RamonRoda\AppData\Local\Programs\Microsoft VS Code` (amb un mínim requerit de 576,5 MB).
 
 En aquest punt ja quedaria tot preparat per a la instal·lació i només caldria clicar a **"Instalar"**.
 
@@ -367,7 +366,8 @@ En aquest punt ja quedaria tot preparat per a la instal·lació i només caldria
 
 * **Visual Studio Code** s’obri correctament i mostra la pantalla de benvinguda amb les opcions de **Walkthrough: Setup VS Code**. Això confirma que el programa funciona correctament a Windows 11.
 
-<img width="1018" height="239" alt="54" src="https://github.com/user-attachments/assets/02a280a4-ddd8-4297-a7de-c08b0a6ec2de" />
+<img width="856" height="174" alt="image" src="https://github.com/user-attachments/assets/74928862-7cd2-4fa4-80e9-fa533d3f3f9a" />
+
 
 ## Pas 37 – Instal·lar una aplicació des de Microsoft Store
 
