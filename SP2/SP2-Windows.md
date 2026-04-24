@@ -212,7 +212,7 @@ Després de creat i muntat el disc Backups (B:), creem manualment la carpeta `C�
 
 La captura confirma que la carpeta `CòpiesUsuaris` ha estat creada sense problemes a `B:\`.
 
-![28](imatges-windows/28.png)
+<img width="408" height="183" alt="image" src="https://github.com/user-attachments/assets/817107e2-1fd4-4115-b313-24a0bc7721d3" />
 
 ---
 
@@ -236,7 +236,7 @@ xcopy C:\Users\%USERNAME% B:\CòpiesUsuaris\%USERNAME% /E /I /Y
 | `/I` | Si la destinació no existeix, la crea com a directori |
 | `/Y` | Sobreescriu fitxers existents sense demanar confirmació |
 
-![29](imatges-windows/29.png)
+<img width="734" height="200" alt="image" src="https://github.com/user-attachments/assets/373c62d7-5ff8-46ee-9564-8ca65c6e5f82" />
 
 ---
 
@@ -244,7 +244,7 @@ xcopy C:\Users\%USERNAME% B:\CòpiesUsuaris\%USERNAME% /E /I /Y
 
 Per assignar l'script perquè s'executi automàticament en iniciar sessió, obrim l'**Editor de directrius de grup loés necessari** executant `gpedit.msc` des de la finestra **Executar** (Win + R).
 
-![30](imatges-windows/30.png)
+<img width="384" height="198" alt="image" src="https://github.com/user-attachments/assets/d651000f-81ed-44aa-a983-398a4e84538f" />
 
 Dins de l'editor, naveguem per l'arbre de directives:
 
@@ -252,9 +252,9 @@ Dins de l'editor, naveguem per l'arbre de directives:
 
 Fem doble clic sobre **Iniciar sessió** per obrir la finestra de propietats.
 
-> ℹ️ La distinció entre **Configuració d'equip** i **Configuració d'usuari** és important: les directives d'equip s'apliquen al sistema sencer (independentment de qui hi ha iniciat sessió), mentre que les d'usuari s'apliquen per sessió d'usuari.
+>  La distinció entre **Configuració d'equip** i **Configuració d'usuari** és important: les directives d'equip s'apliquen al sistema sencer (independentment de qui hi ha iniciat sessió), mentre que les d'usuari s'apliquen per sessió d'usuari.
 
-![31](imatges-windows/31.png)
+<img width="516" height="505" alt="image" src="https://github.com/user-attachments/assets/cdb3d4b4-2343-447b-bb29-a5b8cb5f874c" />
 
 ---
 
@@ -266,13 +266,13 @@ A la finestra de propietats d'**Iniciar sessió**, fem clic a **Agregar…** i i
 
 Premem a **Aceptar** per confirmar.
 
-![32](imatges-windows/32.png)
+<img width="764" height="549" alt="image" src="https://github.com/user-attachments/assets/bdf42bef-2578-4643-ac83-8234a5deb757" />
 
-> ⚠️ **Nota important sobre `gpedit.msc` i usuaris loés necessaris:** La directiva de grup loés necessari s'aplica a **tots** els usuaris del sistema (excepte administradors, en alguns casos). Per controlar l'script específicament per a `alumne1` i `alumne2`, una alternativa és copiar l'script a la carpeta de Documents de cada usuari i registrar-lo individualment. En aquest cas, l'script funciona de manera global per a qualsevol usuari que iniciï sessió.
+>  **Nota important sobre `gpedit.msc` i usuaris loés necessaris:** La directiva de grup loés necessari s'aplica a **tots** els usuaris del sistema (excepte administradors, en alguns casos). Per controlar l'script específicament per a `alumne1` i `alumne2`, una alternativa és copiar l'script a la carpeta de Documents de cada usuari i registrar-lo individualment. En aquest cas, l'script funciona de manera global per a qualsevol usuari que iniciï sessió.
 
 ---
 
-## 🔹 Fase 4 – Verificació i documentació
+##  Fase 4 – Verificació i documentació
 
 ### 👉 Pas 15 – Comprovació: l'script fa la còpia a Backups
 
@@ -280,7 +280,7 @@ Iniciem sessió amb l'usuari **alumne1**. L'script s'executa automàticament a l
 
 La captura del Explorador de Windows confirma que la còpia s'ha realitzat sense problemes: es veuen totes les carpetes del perfil d'alumne1 (`Contacts`, `Desktop`, `Documents`, `Downloads`, etc.) dins de `B:\CòpiesUsuaris\alumne1\`, amb data del 14/04/2026 a les 16:42.
 
-![33](imatges-windows/33.png)
+<img width="532" height="414" alt="image" src="https://github.com/user-attachments/assets/4b98aa98-c52f-4250-ac6b-59db4d576224" />
 
 ---
 
@@ -296,7 +296,7 @@ C:\Users\alumne1> tasklist
 
 La imatge mostra processos típics del sistema: `System Idle Process`, `System`, `Registry`, `smss.exe`, `csrss.exe`, `wininit.exe`, `services.exe`, `lsass.exe`, `svchost.exe` (múltiples instàncies), etc.
 
-![34](imatges-windows/34.png)
+<img width="716" height="347" alt="image" src="https://github.com/user-attachments/assets/ac345bd1-d983-41cb-9716-5ece38e3c80a" />
 
 Redirigim la sortida a un fitxer de text per poder-la analitzar:
 
@@ -306,7 +306,7 @@ C:\Users\alumne1> tasklist > C:\Users\%USERNAME%\processos_inici.txt
 
 La imatge mostra que la comanda s'ha executat sense problemes i que el fitxer `processos_inici.txt` (12.950 bytes) s'ha creat al directori de l'usuari `alumne1`. Fem `dir` per confirmar-ho.
 
-![35](imatges-windows/35.png)
+<img width="964" height="686" alt="image" src="https://github.com/user-attachments/assets/5701c6e0-bc9a-4100-b16f-d2d9307fc9ab" />
 
 Comprovem alguns processos clau usant `findstr` per filtrar del fitxer guardat:
 
@@ -320,7 +320,7 @@ findstr OneDrive.exe C:\Users\%USERNAME%\processos_inici.txt
 - **SearchIndexer.exe** (42 MB) → Servei d'indexació per a la cerca de Windows.
 - **OneDrive.exe** (133–135 MB) → Sincronització al núvol de Microsoft; prescindible en entorns de laboratori.
 
-![36](imatges-windows/36.png)
+<img width="746" height="226" alt="image" src="https://github.com/user-attachments/assets/5025fe6f-94f3-4c7a-8eeb-e486505cf995" />
 
 ---
 
@@ -334,7 +334,7 @@ C:\Users\alumne1> tasklist | findstr "OneDrive.exe Teams.exe SkypeApp.exe"
 
 La imatge mostra que **OneDrive.exe** s'executa en dues instàncies (PID 4272 i 1480), consumint uns 133-135 MB de RAM en total.
 
-![37](imatges-windows/37.png)
+<img width="718" height="73" alt="image" src="https://github.com/user-attachments/assets/140a6880-287e-4b3c-b1cf-8a4d7d7faea1" />
 
 **Taula de processos prescindibles identificats:**
 
@@ -362,7 +362,7 @@ La imatge mostra el resultat:
 
 Comprovem amb `tasklist | findstr OneDrive.exe` que ara només en queda una instància (PID 4272).
 
-![38](imatges-windows/38.png)
+<img width="698" height="143" alt="image" src="https://github.com/user-attachments/assets/f5486689-1ad2-4c3d-b88e-b67921008df7" />
 
 > ⚠️ **Nota:** En alguns casos, un procés amb protecció de Windows (com alguns serveis de sistema o processos protegits) no pot ser terminat ni amb el flag `/F`. Això és un mecanisme de seguretat del sistema operatiu.
 
@@ -380,7 +380,7 @@ taskkill /IM OneDrive.exe /F
 taskkill /IM Teams.exe /F
 ```
 
-![39](imatges-windows/39.png)
+<img width="500" height="175" alt="image" src="https://github.com/user-attachments/assets/1823aa23-4d37-495c-9166-bb102445555c" />
 
 Per validar que funciona, obrim sessió com a **alumne2** i comprovem que OneDrive no s'executa:
 
@@ -391,17 +391,17 @@ C:\Users\alumne2> tasklist | findstr OneDrive.exe
 
 La consola no retorna cap resultat, cosa que confirma que **OneDrive.exe no s'està executant** per a `alumne2` gràcies a l'script d'inici de sessió.
 
-![40](imatges-windows/40.png)
+<img width="390" height="27" alt="image" src="https://github.com/user-attachments/assets/3c5b6025-6e30-4070-aa96-3fd622001d98" />
 
 ---
 
 ### 👉 Pas 23 – Documentació: tasklist, anàlisi de processos crítics i rendiment
 
-#### 📌 Fitxer de processos i anàlisi
+####  Fitxer de processos i anàlisi
 
 El fitxer `processos_inici.txt` generat per `tasklist` conté la llista completa de processos en el moment d'inici de sessió. S'ha adjuntat a la documentació com a evidència.
 
-#### 📌 Què passa si mates un procés crític com explorer.exe?
+####  Què passa si mates un procés crític com explorer.exe?
 
 `explorer.exe` és el gestor de l'escriptori i de l'Explorador de fitxers de Windows. Si l'eliminem:
 
@@ -410,9 +410,9 @@ El fitxer `processos_inici.txt` generat per `tasklist` conté la llista completa
 3. El sistema NO es penja: el kernel i els serveis segueixen funcionant.
 4. Per recuperar-lo: `Ctrl + Alt + Supr → Administrador de tasques → Arxiu → Executar nova tasca → explorer.exe`
 
-> ⚠️ **Prova controlada:** En un entorn de laboratori, eliminar `explorer.exe` és reversible. En un entorn de producció és necessaridria anar amb molta cura, ja que l'usuari quedaria sense interfície gràfica.
+>  **Prova controlada:** En un entorn de laboratori, eliminar `explorer.exe` és reversible. En un entorn de producció és necessaridria anar amb molta cura, ja que l'usuari quedaria sense interfície gràfica.
 
-#### 📌 Com millora el rendiment en VMs?
+####  Com millora el rendiment en VMs?
 
 | Acció | Recursos alliberats |
 |-------|---------------------|
@@ -455,7 +455,7 @@ Cada entrada d'una ACL es diu **ACE (Access Control Entry)** i indica:
 
 Iniciem sessió com a **administrador** i creem la carpeta `Projectes` dins de la partició Dades (E:). La carpeta s'ha creat sense problemes a `E:\Projectes`.
 
-![41](imatges-windows/41.png)
+<img width="264" height="194" alt="image" src="https://github.com/user-attachments/assets/ff1b2b74-cef1-49d1-8aaf-bf1c2bd0c46c" />
 
 ---
 
@@ -465,25 +465,24 @@ Premem dret sobre `E:\Projectes → Propietats → Seguretat`. Veiem els permiso
 
 Premem a **Opciones avanzadas** per accedir a la configuració avançada de permisos.
 
-![42](imatges-windows/42.png)
+<img width="380" height="126" alt="image" src="https://github.com/user-attachments/assets/8e13e1b7-fdbc-4325-a69f-c0054e66e74e" />
 
 A la finestra d'opcions avançades veiem que els permisos estan **heretats** des de `E:\` (columna "Heredada de"). Premem a **Deshabilitar herencia** per trencar la herència i poder gestionar els permisos de forma independent.
 
-![43](imatges-windows/43.png)
 
-Eliminem l'entrada de **Usuarios (Astro\Usuarios)** per netejar els permisos per defecte que no necessitem. Seleccionem l'entrada i fem clic a **Quitar**.
+Eliminem l'entrada de **Usuarios (RAMON\Usuarios)** per netejar els permisos per defecte que no necessitem. Seleccionem l'entrada i fem clic a **Quitar**.
 
-![44](imatges-windows/44.png)
+<img width="395" height="684" alt="image" src="https://github.com/user-attachments/assets/0474e9d7-7df3-409b-b997-10fc76b049ed" />
 
 Ara afegim el grup **Limitats** amb **Control total**. Premem a **Agregar**, introduïm `Limitats`, i marquem tots els permisos bàsics (Control total, Modificar, Lectura i execució, Mostrar el contingut de la carpeta, Lectura, Escriptura).
 
 El tipus és **Permitir** i s'aplica a **Esta carpeta, subcarpetes y archivos** per garantir herència cap avall.
 
-![46](imatges-windows/46.png)
+<img width="984" height="698" alt="image" src="https://github.com/user-attachments/assets/1e5d84e7-613a-45be-86e4-c8b7c307bbb2" />
 
-La captura de la configuració avançada final mostra el resultat: la columna **"Heredada de"** ara diu **"Ninguno"** per a totes les entrades, confirmant que la herència s'ha desactivat. El grup **Limitats (ASTRO\Limitats)** apareix amb **Control total**.
+La captura de la configuració avançada final mostra el resultat: la columna **"Heredada de"** ara diu **"Ninguno"** per a totes les entrades, confirmant que la herència s'ha desactivat. El grup **Limitats (RAMON\Limitats)** apareix amb **Control total**.
 
-![47](imatges-windows/47.png)
+<img width="937" height="694" alt="image" src="https://github.com/user-attachments/assets/ef132ead-c79c-44f6-a82a-b433e0cddae2" />
 
 ---
 
@@ -493,11 +492,11 @@ Iniciem sessió com a **alumne1** (membre del grup Limitats). Creem un fitxer de
 
 La captura confirma que alumne1 ha pogut crear i escriure el fitxer sense cap problema, tal com s'esperava (té **Control total** hereta del grup Limitats).
 
-![48](imatges-windows/48.png)
+<img width="789" height="228" alt="image" src="https://github.com/user-attachments/assets/da6e921a-d526-42f0-8bdd-ab215e4a6251" />
 
 El fitxer `hey.txt` s'ha creat sense problemes a `E:\Projectes` i conté el text "hola".
 
-![49](imatges-windows/49.png)
+<img width="206" height="136" alt="image" src="https://github.com/user-attachments/assets/5fd14332-c1ba-4920-8f32-165db700170d" />
 
 ---
 
@@ -515,7 +514,7 @@ icacls "E:\Projectes" /grant:r alumne2:(R)
 
 La sortida confirma: *"Se procesaron sense problemese 1 archivos"*. Ara `alumne2` té **només lectura**, tot i ser membre del grup Limitats que té Control total (la entrada explícita de l'usuari té **prioritat** sobre la del grup).
 
-![51](imatges-windows/51.png)
+<img width="1683" height="201" alt="image" src="https://github.com/user-attachments/assets/22d410da-d40f-445a-aa40-82c3c1f6591c" />
 
 ---
 
@@ -525,15 +524,18 @@ Iniciem sessió com a **alumne2** i accedim a `E:\Projectes`. La imatge mostra q
 
 Quan alumne2 intenta crear un fitxer nou o modificar algun existent, rep un missatge de **denegació d'accés**.
 
-![50](imatges-windows/50.png)
+<img width="682" height="242" alt="image" src="https://github.com/user-attachments/assets/f70cde99-2605-45da-88b7-065879229c3b" />
+
+
 
 Tornem a iniciar sessió com a alumne1 i comprovem que pot llegir i veure el fitxer `hola.txt` creat a la sessió anterior.
 
-![52](imatges-windows/52.png)
+<img width="742" height="310" alt="image" src="https://github.com/user-attachments/assets/9071a018-9763-40e9-a336-c569d21265d0" />
+
 
 Quan alumne2 intenta crear una carpeta nova a `E:\Projectes`, el sistema nega l'operació (el menú contextual pot mostrar-se però la creació fallaria amb error d'accés).
 
-![53](imatges-windows/53.png)
+<img width="1005" height="672" alt="image" src="https://github.com/user-attachments/assets/2c96cd9d-9d04-4116-ae77-a88017690c95" />
 
 ---
 
@@ -549,10 +551,10 @@ La sortida és:
 
 ```
 E:\Projectes NT AUTHORITY\SYSTEM:(OI)(CI)(F)
-             Astro\Ramon:(OI)(CI)(F)
-             Astro\alumne2:(R)
+             RAMON\Ramon:(OI)(CI)(F)
+             RAMON\alumne2:(R)
              BUILTIN\Administradores:(OI)(CI)(F)
-             Astro\Limitats:(OI)(CI)(F)
+             RAMON\Limitats:(OI)(CI)(F)
 ```
 
 **Interpretació dels codis ACL:**
@@ -565,11 +567,10 @@ E:\Projectes NT AUTHORITY\SYSTEM:(OI)(CI)(F)
 | `(R)`  | Read – només lectura |
 
 **Conclusions:**
-- **SYSTEM i Administradors**: Control total `(OI)(CI)(F)` ✅
-- **Astro\Ramon** (admin principal): Control total `(OI)(CI)(F)` ✅
-- **Astro\Limitats** (grup): Control total `(OI)(CI)(F)` ✅ → alumne1 gaudeix d'aquest permís
-- **Astro\alumne2**: Només lectura `(R)` ⚠️ → L'entrada explícita de l'usuari **té prioritat** sobre la del grup
+- **SYSTEM i Administradors**: Control total `(OI)(CI)(F)` 
+- **RAMON\Ramon** (admin principal): Control total `(OI)(CI)(F)` 
+- **RAMON\Limitats** (grup): Control total `(OI)(CI)(F)`  → alumne1 gaudeix d'aquest permís
+- **RAMON\alumne2**: Només lectura `(R)`  → L'entrada explícita de l'usuari **té prioritat** sobre la del grup
 
 > 📌 **Regla clau d'ACLs a Windows:** quan un usuari té dues entrades (una per usuari i una per grup) i entren en conflicte, la **entrada explícita de l'usuari** sempre té prioritat sobre la del grup, excepte si l'entrada de grup és "Deny" que sempre guanya.
 
-![54](imatges-windows/54.png)
