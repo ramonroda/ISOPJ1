@@ -142,7 +142,8 @@ Dins del panell de configuració de quotes, activem les opcions:
 
 >  Amb el limit establert a 300 MB, cap usuari podrà escriure més dades un cop superi aquesta mida. L'advertència a 150 KB és inusualment baixa (seria recomanable posar-la a uns 250 MB), però serveix per il·lustrar el funcionament.
 
-![Uploading image.png…]()
+<img width="306" height="437" alt="image" src="https://github.com/user-attachments/assets/e2448b20-695c-48ee-9e9a-06dccfdcc1cd" />
+
 
 ---
 
@@ -150,19 +151,20 @@ Dins del panell de configuració de quotes, activem les opcions:
 
 Per crear usuaris loés necessaris a Windows, executem `lusrmgr.msc` (Gestió d'usuaris i grups loés necessaris) des de la finestra **Executar** (Win + R).
 
-![Uploading image.png…]()
+<img width="235" height="194" alt="image" src="https://github.com/user-attachments/assets/ab49cd36-98fc-42ba-bd0b-b7d6321eda5e" />
 
 Dins de la consola, fem clic dret sobre **Usuaris → Usuari nou…**
 
-![Uploading image.png…]()
+<img width="971" height="650" alt="image" src="https://github.com/user-attachments/assets/de0bc4c3-0e87-4499-9e9b-79e9913aa766" />
+
 
 Creem l'usuari **alumne1** amb la contrasenya corresponent. Activem l'opció **La contrasenya mai expira** per evitar problemes en les proves.
 
-![19](imatges-windows/19.png)
+<img width="259" height="145" alt="image" src="https://github.com/user-attachments/assets/73238982-5695-4bd1-9b68-2e7527a5ffac" />
 
 De forma similar, creem l'usuari **alumne2** amb la mateixa configuració.
 
-![20](imatges-windows/20.png)
+<img width="226" height="145" alt="image" src="https://github.com/user-attachments/assets/f0753b22-e7ee-4077-94b9-5b29ef4cb9e8" />
 
 ---
 
@@ -170,31 +172,19 @@ De forma similar, creem l'usuari **alumne2** amb la mateixa configuració.
 
 Dins de `lusrmgr.msc`, fem clic sobre la carpeta **Grupos** per veure tots els grups existents. Clic dret en un espai buit de la llista → **Grupo nuevo…**
 
-![21](imatges-windows/21.png)
+<img width="1031" height="668" alt="image" src="https://github.com/user-attachments/assets/46f457ec-af73-415a-8ca0-cfc1e9160629" />
 
 Indiquem el nom del grup **Limitats** i afegim els dos usuaris creats (`alumne1` i `alumne2`) com a membres. Premem a **Crear** per finalitzar.
 
-![22](imatges-windows/22.png)
+<img width="153" height="181" alt="image" src="https://github.com/user-attachments/assets/7ecf5209-d6c5-4ad9-9429-02758bfbf896" />
 
 ---
 
 ### 👉 Pas 9 – Provar la còpia de fitxers a Dades per veure com actuen les quotes
 
-Per validar que les quotes funcionen sense problemes, obrim sessió com a **alumne1** i intentem crear fitxers de diverses mides a la partició `E:\` amb la comanda `fsutil file createnew`:
-
-```
-fsutil file createnew E:\prova.dat 350000000   → Error 112: Espai insuficient (supera els 300 MB)
-fsutil file createnew E:\prova.dat 150000000   → Fitxer creat (150 MB)
-fsutil file createnew E:\prova.dat 150000000   → Fitxer creat (re-escriu el mateix)
-fsutil file createnew E:\prova2.dat 50000000   → Fitxer creat (50 MB)
-fsutil file createnew E:\prova3.dat 50000000   → Fitxer creat (50 MB)
-fsutil file createnew E:\prova4.dat 50000000   → Fitxer creat (50 MB)
-fsutil file createnew E:\prova5.dat 50000000   → Error 112: Espai insuficient (ja s'han superat els 300 MB)
-```
-
 La imatge mostra clarament com el sistema **nega l'accés** quan l'usuari intenta superar els 300 MB assignats per la quota. L'error **112** és el codi de Windows per "espai en disc insuficient", que en aquest context és provocat artificialment per la quota, no per la mida real del disc.
 
-![24](imatges-windows/24.png)
+<img width="557" height="437" alt="image" src="https://github.com/user-attachments/assets/d7e92b52-219d-404c-a951-a8e4c2c595a9" />
 
 ---
 
@@ -204,15 +194,15 @@ La imatge mostra clarament com el sistema **nega l'accés** quan l'usuari intent
 
 Des de la configuració de VirtualBox, afegim un **tercer disc** (`Windows 11 Pro_2.vdi`) de 5 GB connectat al port SATA 3. Servirà com a unitat de còpies de seguretat.
 
-![25](imatges-windows/25.png)
+<img width="574" height="261" alt="image" src="https://github.com/user-attachments/assets/edc50b9c-cfe0-47a5-ae54-2b09062472ed" />
 
 Després de dins de Windows, obrim la **Gestió de discs** i loés necessariitzem el nou **Disc 2** (4,98 GB, no asignat). Clic dret → **Nou volum simple…**
 
-![26](imatges-windows/26.png)
+<img width="694" height="222" alt="image" src="https://github.com/user-attachments/assets/ebd31167-e406-4f2f-bb5b-f11a5dfc504d" />
 
 Donem format a tot el disc com a **NTFS** i li posem l'etiqueta **Backups**. Configurem la lletra **B:**.
 
-![27](imatges-windows/27.png)
+<img width="452" height="285" alt="image" src="https://github.com/user-attachments/assets/b943583d-cfb7-43a6-9f53-c76500c3f09a" />
 
 ---
 
