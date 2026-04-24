@@ -61,21 +61,19 @@ Donem format a la partició amb el sistema de fitxers **NTFS**, que és el forma
 
 La pantalla final de l'assistent mostra tota la configuració seleccionada: 3000 MB, unitat E:, NTFS, etiqueta "Dades". Premem a **Finalizar** per crear la partició.
 
-![7](imatges-windows/7.png)
-
 ####  Crear la partició Portable (FAT32)
 
 Amb l'espai restant del Disc 1 (2,05 GB aproximadament), creem una segona partició. Clic dret → **Nou volum simple…**
 
-![8](imatges-windows/8.png)
+<img width="1262" height="501" alt="image" src="https://github.com/user-attachments/assets/b33b1f0a-6ddb-47a9-8b7a-e078bc8725c8" />
 
 Usem tot l'espai disponible (2102 MB) per a aquesta partició, que simularà un dispositiu portàtil.
 
-![9](imatges-windows/9.png)
+<img width="351" height="207" alt="image" src="https://github.com/user-attachments/assets/d0292bf1-88c0-4759-9849-dc6925c0d948" />
 
 Configurem la lletra **F:** per a la partició Portable.
 
-![10](imatges-windows/10.png)
+<img width="429" height="134" alt="image" src="https://github.com/user-attachments/assets/3a77d3d6-062f-4985-97b3-079b55b18d9e" />
 
 Donem format a aquesta partició com a **FAT32** amb l'etiqueta **Portable**. FAT32 és compatible amb la majoria de dispositius (càmeres, consoles, etc.) però té la limitació de no poder emmagatzemar fitxers de més de 4 GB.
 
@@ -87,11 +85,11 @@ Donem format a aquesta partició com a **FAT32** amb l'etiqueta **Portable**. FA
 | Compatibilitat      | Windows/Linux | Universal              |
 | Journaling          | ✅ Sí         | ❌ No                  |
 
-![11](imatges-windows/11.png)
+<img width="433" height="306" alt="image" src="https://github.com/user-attachments/assets/1d71c6de-fc1f-4c08-b58f-72ed143fc3e5" />
 
 La pantalla final confirma la creació de la partició Portable: 2102 MB, unitat F:, FAT32. Premem a **Finalizar**.
 
-![12](imatges-windows/12.png)
+<img width="666" height="691" alt="image" src="https://github.com/user-attachments/assets/0d001d85-7547-4ad4-a2a1-9958b7d11efe" />
 
 ---
 
@@ -113,7 +111,7 @@ La imatge mostra el resultat complet. Es pot confirmar:
   - **Partició 2** → Volum 4 · Lletra **E:** · Etiqueta **Dades** · NTFS · 3000 MB ✅
   - **Partició 3** → Volum 5 · Lletra **F:** · Etiqueta **PORTABLE** · FAT32 · 2102 MB ✅
 
-![13](imatges-windows/13.png)
+<img width="637" height="469" alt="image" src="https://github.com/user-attachments/assets/918b8509-eaaa-4031-9288-461ea6910aef" />
 
 ---
 
@@ -123,11 +121,11 @@ La imatge mostra el resultat complet. Es pot confirmar:
 
 Les **quotes de disc** a Windows permeten limitar l'espai que cada usuari pot usar dins d'una partició NTFS. Per activar-les, obrim l'Explorador de Windows, clic dret sobre la unitat **Dades (E:)** i seleccionem **Propietats**.
 
-![14](imatges-windows/14.png)
+<img width="532" height="673" alt="image" src="https://github.com/user-attachments/assets/313879e0-56f0-41dc-b3d2-a674b0d1141e" />
 
 A la finestra de propietats ens dirigim a la pestanya **Cuota** i fem clic a **Mostrar configuració de cuota**.
 
-![15](imatges-windows/15.png)
+<img width="643" height="493" alt="image" src="https://github.com/user-attachments/assets/6b48c836-ac46-4f5f-af69-26d58922d34e" />
 
 ---
 
@@ -135,16 +133,16 @@ A la finestra de propietats ens dirigim a la pestanya **Cuota** i fem clic a **M
 
 Dins del panell de configuració de quotes, activem les opcions:
 
-- ✅ **Habilita la administración de cuota**: activa el sistema de quotes.
-- ✅ **Denegar espacio en disco a usuarios que superen el límite**: bloqueja l'escriptura quan se supera el límit.
-- 🔘 **Limitar espacio en disco a**: **300 MB**
-- ⚠️ **Establecer el nivel de advertencia en**: **150 KB** (l'usuari rebrà un avís quan quasi ompli el límit)
-- ✅ **Registrar un evento cuando algún usuario supere su límite de cuota**
-- ✅ **Registrar un evento cuando algún usuario supere su nivel de advertencia**
+-  **Habilita la administración de cuota**: activa el sistema de quotes.
+-  **Denegar espacio en disco a usuarios que superen el límite**: bloqueja l'escriptura quan se supera el límit.
+-  **Limitar espacio en disco a**: **300 MB**
+-  **Establecer el nivel de advertencia en**: **150 KB** (l'usuari rebrà un avís quan quasi ompli el límit)
+-  **Registrar un evento cuando algún usuario supere su límite de cuota**
+-  **Registrar un evento cuando algún usuario supere su nivel de advertencia**
 
-> ⚠️ Amb el limit establert a 300 MB, cap usuari podrà escriure més dades un cop superi aquesta mida. L'advertència a 150 KB és inusualment baixa (seria recomanable posar-la a uns 250 MB), però serveix per il·lustrar el funcionament.
+>  Amb el limit establert a 300 MB, cap usuari podrà escriure més dades un cop superi aquesta mida. L'advertència a 150 KB és inusualment baixa (seria recomanable posar-la a uns 250 MB), però serveix per il·lustrar el funcionament.
 
-![16](imatges-windows/16.png)
+![Uploading image.png…]()
 
 ---
 
@@ -152,11 +150,11 @@ Dins del panell de configuració de quotes, activem les opcions:
 
 Per crear usuaris loés necessaris a Windows, executem `lusrmgr.msc` (Gestió d'usuaris i grups loés necessaris) des de la finestra **Executar** (Win + R).
 
-![17](imatges-windows/17.png)
+![Uploading image.png…]()
 
 Dins de la consola, fem clic dret sobre **Usuaris → Usuari nou…**
 
-![18](imatges-windows/18.png)
+![Uploading image.png…]()
 
 Creem l'usuari **alumne1** amb la contrasenya corresponent. Activem l'opció **La contrasenya mai expira** per evitar problemes en les proves.
 
