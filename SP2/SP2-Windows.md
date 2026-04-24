@@ -15,9 +15,10 @@ Per augmentar l'espai d'emmagatzematge de la màquina virtual és necessari afeg
 
 En aquesta imatge es pot observar que s'ha creat el fitxer `Windows 11 Pro_1.vdi` (el segon disc), amb una mida virtual de **5,00 GB** i format **VDI (Normal)**. Apareix connectat al controlador SATA al port SATA 2, just a sota del disc principal del sistema.
 
-> 💡 Un disc VDI d'ubicació dinàmica ocupa molt poc espai real al host fins que s'hi escriu informació.
+>  Un disc VDI d'ubicació dinàmica ocupa molt poc espai real al host fins que s'hi escriu informació.
 
-![1](imatges-windows/1.png)
+<img width="1452" height="692" alt="image" src="https://github.com/user-attachments/assets/20b17d50-09eb-42af-9258-5b8b4f1a2b45" />
+
 
 ---
 
@@ -27,37 +28,42 @@ Després de afegit el disc a VirtualBox, iniciem la màquina virtual amb Windows
 
 En la captura es veu que el sistema reconeix el nou **Disc 1** (4,98 GB) amb tot l'espai **No asignat**. Això demostra que Windows l'ha detectat sense problemes, però encara no s'ha inicialitzat ni creat cap partició.
 
-> ℹ️ Quan un disc és nou, Windows el detecta però és necessari inicialitzar-lo (triar GPT o MBR) abans de poder-hi crear particions.
+>  Quan un disc és nou, Windows el detecta però és necessari inicialitzar-lo (triar GPT o MBR) abans de poder-hi crear particions.
 
-![2](imatges-windows/2.png)
+<img width="270" height="91" alt="image" src="https://github.com/user-attachments/assets/0599ebb4-b833-4251-afde-70cfdbeeafa4" />
+
 
 ---
 
 ### 👉 Pas 3 – Inicialitzar el disc i crear dues particions: Dades (NTFS) i Portable (FAT32)
 
-#### 📌 Crear la partició Dades (NTFS)
+####  Crear la partició Dades (NTFS)
 
 Premem dret sobre l'espai no asignat del Disc 1 i seleccionem **Nou volum simple…**
 
-![3](imatges-windows/3.png)
+<img width="1056" height="497" alt="image" src="https://github.com/user-attachments/assets/a2f190f9-a70e-4b13-84d6-19ec7d7d65c6" />
+
 
 S'inicia l'assistent per crear el volum. Indiquem **3000 MB** (3 GB) com a mida per a la primera partició, deixant la resta per a la segona.
 
-![4](imatges-windows/4.png)
+<img width="349" height="236" alt="image" src="https://github.com/user-attachments/assets/881386f6-1141-49d8-9ac4-5a6952d67155" />
+
 
 Configurem la lletra d'unitat **E:** a aquesta partició perquè sigui accessible des de l'Explorador de Windows.
 
-![5](imatges-windows/5.png)
+<img width="415" height="135" alt="image" src="https://github.com/user-attachments/assets/57bcea36-26ce-4ddb-a3ad-b38009f934d1" />
+
 
 Donem format a la partició amb el sistema de fitxers **NTFS**, que és el format natiu de Windows i l'únic que suporta quotes de disc i permisos ACL avançats. L'etiqueta del volum serà **Dades**.
 
-![6](imatges-windows/6.png)
+<img width="454" height="355" alt="image" src="https://github.com/user-attachments/assets/482e7421-f985-4a3f-8cab-c161a09696d1" />
+
 
 La pantalla final de l'assistent mostra tota la configuració seleccionada: 3000 MB, unitat E:, NTFS, etiqueta "Dades". Premem a **Finalizar** per crear la partició.
 
 ![7](imatges-windows/7.png)
 
-#### 📌 Crear la partició Portable (FAT32)
+####  Crear la partició Portable (FAT32)
 
 Amb l'espai restant del Disc 1 (2,05 GB aproximadament), creem una segona partició. Clic dret → **Nou volum simple…**
 
