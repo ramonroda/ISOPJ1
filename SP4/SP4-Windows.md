@@ -17,11 +17,11 @@ Cada nivell de RAID ofereix característiques diferents segons l'objectiu: millo
 
 | Nivell | Nom | Nº mínim de discos | Capacitat útil | Tolerància a fallades | Rendiment lectura | Rendiment escriptura | Ús típic |
 |--------|-----|--------------------|----------------|-----------------------|-------------------|----------------------|----------|
-| **RAID 0** | Striping | 2 | 100% (tots els discos) | ❌ Cap | ✅ Excel·lent | ✅ Excel·lent | Edició de vídeo, gaming |
-| **RAID 1** | Mirroring | 2 | 50% (la meitat dels discos) | ✅ 1 disc | ✅ Bona | ⚠️ Normal | Servidors crítics, OS |
-| **RAID 5** | Striping amb paritat distribuïda | 3 | N-1 discos | ✅ 1 disc | ✅ Bona | ⚠️ Moderada | Servidors de fitxers |
-| **RAID 6** | Doble paritat | 4 | N-2 discos | ✅ 2 discos | ✅ Bona | ⚠️ Lenta | Emmagatzematge crític |
-| **RAID 10** | Mirroring + Striping | 4 | 50% (la meitat dels discos) | ✅ 1 per parella | ✅ Excel·lent | ✅ Excel·lent | Bases de dades, ERP |
+| **RAID 0** | Striping | 2 | 100% (tots els discos) |  Cap |  Excel·lent |  Excel·lent | Edició de vídeo, gaming |
+| **RAID 1** | Mirroring | 2 | 50% (la meitat dels discos) |  1 disc |  Bona |  Normal | Servidors crítics, OS |
+| **RAID 5** | Striping amb paritat distribuïda | 3 | N-1 discos |  1 disc |  Bona |  Moderada | Servidors de fitxers |
+| **RAID 6** | Doble paritat | 4 | N-2 discos |  2 discos |  Bona |  Lenta | Emmagatzematge crític |
+| **RAID 10** | Mirroring + Striping | 4 | 50% (la meitat dels discos) |  1 per parella |  Excel·lent |  Excel·lent | Bases de dades, ERP |
 
 > **Nota:** Cap nivell de RAID substitueix una còpia de seguretat. El RAID protegeix contra fallades de disc, però no contra errors humans, corrupció de dades o desastres físics.
 
@@ -306,11 +306,11 @@ Comprovem que tots els fitxers de `R:\Prova-Raid5Astro` segueixen intactes i acc
 
 | Pas | Situació | Estat del RAID | Accés a fitxers |
 |-----|----------|---------------|-----------------|
-| Inicial | 3 discos operatius | ✅ Correcto | ✅ Accessible |
-| 1 disc fora de línia | Mode degradat | ⚠️ Error de redundancia | ✅ Accessible |
-| 2 discos fora de línia | RAID col·lapsat | ❌ Error total | ❌ Inaccessible |
-| 1 disc recuperat | Recuperació parcial | ⚠️ Error de redundancia | ✅ Accessible |
-| 2 discos recuperats + resync | Recuperació completa | ✅ Correcto | ✅ Accessible |
+| Inicial | 3 discos operatius |  Correcto |  Accessible |
+| 1 disc fora de línia | Mode degradat |  Error de redundancia |  Accessible |
+| 2 discos fora de línia | RAID col·lapsat |  Error total |  Inaccessible |
+| 1 disc recuperat | Recuperació parcial | Error de redundancia |  Accessible |
+| 2 discos recuperats + resync | Recuperació completa | Correcto |  Accessible |
 
 ### Observacions tècniques
 
