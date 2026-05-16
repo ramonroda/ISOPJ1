@@ -179,7 +179,8 @@ Un cop completat el format, els tres discos mostren el volum **RAID5-Astro** amb
 
 Obrim l'Explorador d'arxius i podem veure que el nou volum **RAID5-Astro (R:)** apareix com a unitat del sistema amb **19,9 GB disponibles**. Confirma que el sistema operatiu reconeix i pot accedir al RAID 5.
 
-![Explorador d'arxius - RAID5-Astro (R:) amb 19.9 GB disponibles](https://raw.githubusercontent.com/erosmauri/ISOPJ1/main/SP4/imatges-windows/15.png)
+<img width="1497" height="710" alt="image" src="https://github.com/user-attachments/assets/0d85f430-1f5c-449b-b9f8-d034f88f5a95" />
+
 
 ---
 
@@ -187,7 +188,8 @@ Obrim l'Explorador d'arxius i podem veure que el nou volum **RAID5-Astro (R:)** 
 
 Entrem a la unitat `R:\` i creem la carpeta **Prova-Raid5Astro** per provar que podem escriure dades al volum RAID 5.
 
-![Carpeta Prova-Raid5Astro creada a R:\\](https://raw.githubusercontent.com/erosmauri/ISOPJ1/main/SP4/imatges-windows/16.png)
+<img width="1619" height="665" alt="image" src="https://github.com/user-attachments/assets/897d5f78-b8e7-4771-b680-76aeff298481" />
+
 
 ---
 
@@ -195,7 +197,8 @@ Entrem a la unitat `R:\` i creem la carpeta **Prova-Raid5Astro** per provar que 
 
 Copiem fitxers dins de la carpeta `Prova-Raid5Astro`. En aquest cas s'han copiat diverses aplicacions i carpetes de dotnet. Comprovem que tots els fitxers s'han copiat correctament i es poden obrir.
 
-![Fitxers copiats correctament dins de R:\Prova-Raid5Astro](https://raw.githubusercontent.com/erosmauri/ISOPJ1/main/SP4/imatges-windows/17.png)
+<img width="1295" height="715" alt="image" src="https://github.com/user-attachments/assets/4afe0920-ab5b-4668-9ef2-1fd946f2b539" />
+
 
 ---
 
@@ -223,7 +226,8 @@ Amb el Disco 1 desactivat, el Gestor de discos mostra tots els membres del RAID 
 
 Amb un disc fora de línia, comprovem que podem accedir a `R:\Prova-Raid5Astro` i obrir els fitxers sense cap problema. La vista dividida mostra el Gestor de discos (amb errors de redundància) i l'Explorador d'arxius (amb els fitxers accessibles). Això demostra la **tolerància a fallades del RAID 5**.
 
-![Comprovació: fitxers accessibles malgrat la fallada del Disco 1](https://raw.githubusercontent.com/erosmauri/ISOPJ1/main/SP4/imatges-windows/20.png)
+<img width="1605" height="786" alt="image" src="https://github.com/user-attachments/assets/dc2dfcb3-9ac3-4aa7-ac93-ded9f3fe086c" />
+
 
 ---
 
@@ -259,7 +263,7 @@ Per recuperar el RAID, tornem a posar els discos en línia. Fem clic dret sobre 
 
 Després de posar el Disco 1 en línia, el Gestor de discos mostra el Disco 1 i el Disco 3 **en pantalla** (operatius), però el Disco 2 encara figura amb avís. L'estat dels discos segueix mostrant **"Error de redundancia"** perquè el Disco 2 encara no s'ha resincronitzat.
 
-![Disco 1 en línia - RAID parcial, Disco 2 encara amb advertència](https://raw.githubusercontent.com/erosmauri/ISOPJ1/main/SP4/imatges-windows/24.png)
+<img width="1074" height="627" alt="image" src="https://github.com/user-attachments/assets/eaaaaf4e-3bf4-4196-968b-acb98daf3a0d" />
 
 ---
 
@@ -267,7 +271,8 @@ Després de posar el Disco 1 en línia, el Gestor de discos mostra el Disco 1 i 
 
 Per completar la recuperació, fem clic dret sobre el **Disco 2** i seleccionem **Reactivar disco**. Això ordena a Windows que torni a sincronitzar la paritat i les dades del disc recuperat amb la resta del RAID.
 
-![Clic dret Disco 2 → Reactivar disco per completar la recuperació](https://raw.githubusercontent.com/erosmauri/ISOPJ1/main/SP4/imatges-windows/25.png)
+<img width="780" height="690" alt="image" src="https://github.com/user-attachments/assets/234500a2-9efc-4c8b-83a3-8fe1cc73865c" />
+
 
 ---
 
@@ -275,7 +280,7 @@ Per completar la recuperació, fem clic dret sobre el **Disco 2** i seleccionem 
 
 El Gestor de discos mostra els tres discos amb l'estat **"Volviendo a sincronizar: (63%)"**. Windows Server està recalculant la paritat i verificant la coherència de les dades entre els tres discos. Aquest procés pot trigar uns minuts depenent de la mida del RAID.
 
-![Resincronització del RAID 5 al 63%](https://raw.githubusercontent.com/erosmauri/ISOPJ1/main/SP4/imatges-windows/26.png)
+<img width="898" height="773" alt="image" src="https://github.com/user-attachments/assets/67a01076-4029-4bd7-b793-979f6b4562fc" />
 
 ---
 
@@ -283,7 +288,7 @@ El Gestor de discos mostra els tres discos amb l'estat **"Volviendo a sincroniza
 
 Un cop finalitzada la resincronització, els tres discos tornen a mostrar l'estat **Correcto**. El volum RAID5-Astro ha recuperat tota la seva redundància i funciona completament.
 
-![Disk Management - Tots els discos en estat Correcto després de la recuperació](https://raw.githubusercontent.com/erosmauri/ISOPJ1/main/SP4/imatges-windows/27.png)
+<img width="1280" height="744" alt="image" src="https://github.com/user-attachments/assets/2942344d-5126-40b3-8621-3ac3cca95cdc" />
 
 ---
 
@@ -291,7 +296,7 @@ Un cop finalitzada la resincronització, els tres discos tornen a mostrar l'esta
 
 Comprovem que tots els fitxers de `R:\Prova-Raid5Astro` segueixen intactes i accessibles. La vista dividida mostra el Gestor de discos (tots **Correcto**) i l'Explorador d'arxius amb tots els fitxers originals presents i en perfecte estat.
 
-![Verificació final - RAID recuperat i fitxers intactes a R:\Prova-Raid5Astro](https://raw.githubusercontent.com/erosmauri/ISOPJ1/main/SP4/imatges-windows/28.png)
+<img width="1542" height="796" alt="image" src="https://github.com/user-attachments/assets/3ab5c653-9715-4a03-8e4f-785a8b2635e7" />
 
 ---
 
