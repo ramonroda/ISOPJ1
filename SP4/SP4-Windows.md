@@ -134,7 +134,7 @@ Assignem la lletra **R:** al nou volum RAID 5, que és la lletra que utilitzarem
 Configurem el format del volum:
 - **Sistema de fitxers:** NTFS
 - **Mida de la unitat d'assignació:** Predeterminada
-- **Etiqueta del volum:** `RAID5-Astro`
+- **Etiqueta del volum:** `RAID5-Ramon`
 
 Fem clic a **Siguiente** per continuar.
 
@@ -151,7 +151,7 @@ L'assistent mostra el resum de la configuració seleccionada abans de finalitzar
 - Tamany del volum: **20.444 MB**
 - Lletra d'unitat: **R:**
 - Sistema de fitxers: **NTFS**
-- Etiqueta: **RAID5-Astro**
+- Etiqueta: **RAID5-Ramon**
 
 Fem clic a **Finalizar** per crear el RAID.
 
@@ -169,7 +169,7 @@ El Gestor de discos mostra els tres discos mentre s'estan formatant. El progrés
 
 ### 13. RAID 5 creat i operatiu
 
-Un cop completat el format, els tres discos mostren el volum **RAID5-Astro** amb estat **Correcto**. El RAID 5 ja és completament funcional.
+Un cop completat el format, els tres discos mostren el volum **RAID5-Ramon** amb estat **Correcto**. El RAID 5 ja és completament funcional.
 
 ![Disk Management - RAID5-Astro en estat Correcto als 3 discos](https://raw.githubusercontent.com/erosmauri/ISOPJ1/main/SP4/imatges-windows/14.png)
 
@@ -177,7 +177,7 @@ Un cop completat el format, els tres discos mostren el volum **RAID5-Astro** amb
 
 ### 14. El RAID 5 visible a l'Explorador d'arxius
 
-Obrim l'Explorador d'arxius i podem veure que el nou volum **RAID5-Astro (R:)** apareix com a unitat del sistema amb **19,9 GB disponibles**. Confirma que el sistema operatiu reconeix i pot accedir al RAID 5.
+Obrim l'Explorador d'arxius i podem veure que el nou volum **RAID5-Ramon (R:)** apareix com a unitat del sistema amb **19,9 GB disponibles**. Confirma que el sistema operatiu reconeix i pot accedir al RAID 5.
 
 <img width="1497" height="710" alt="image" src="https://github.com/user-attachments/assets/0d85f430-1f5c-449b-b9f8-d034f88f5a95" />
 
@@ -186,7 +186,7 @@ Obrim l'Explorador d'arxius i podem veure que el nou volum **RAID5-Astro (R:)** 
 
 ### 15. Crear una carpeta de prova al RAID
 
-Entrem a la unitat `R:\` i creem la carpeta **Prova-Raid5Astro** per provar que podem escriure dades al volum RAID 5.
+Entrem a la unitat `R:\` i creem la carpeta **Prova-Raid5Ramon** per provar que podem escriure dades al volum RAID 5.
 
 <img width="1619" height="665" alt="image" src="https://github.com/user-attachments/assets/897d5f78-b8e7-4771-b680-76aeff298481" />
 
@@ -195,7 +195,7 @@ Entrem a la unitat `R:\` i creem la carpeta **Prova-Raid5Astro** per provar que 
 
 ### 16. Copiar fitxers al RAID
 
-Copiem fitxers dins de la carpeta `Prova-Raid5Astro`. En aquest cas s'han copiat diverses aplicacions i carpetes de dotnet. Comprovem que tots els fitxers s'han copiat correctament i es poden obrir.
+Copiem fitxers dins de la carpeta `Prova-Raid5Ramon`. En aquest cas s'han copiat diverses aplicacions i carpetes de dotnet. Comprovem que tots els fitxers s'han copiat correctament i es poden obrir.
 
 <img width="1295" height="715" alt="image" src="https://github.com/user-attachments/assets/4afe0920-ab5b-4668-9ef2-1fd946f2b539" />
 
@@ -214,7 +214,7 @@ Tornem al Gestor de discos. Fem clic dret sobre el **Disco 1** i seleccionem **S
 
 ### 18. RAID en estat degradat (1 disc fallat)
 
-Amb el Disco 1 desactivat, el Gestor de discos mostra tots els membres del RAID amb l'estat **"Error de redundancia"**. El sistema detecta que ha perdut un disc i opera en mode degradat. A la llista superior es pot veure que el volum `RAID5-Astro (R:)` figura com a **Error de re...** (redundàncies).
+Amb el Disco 1 desactivat, el Gestor de discos mostra tots els membres del RAID amb l'estat **"Error de redundancia"**. El sistema detecta que ha perdut un disc i opera en mode degradat. A la llista superior es pot veure que el volum `RAID5-Ramon (R:)` figura com a **Error de re...** (redundàncies).
 
 > **Important:** Malgrat el mode degradat, el RAID 5 **segueix funcionant** gràcies a la paritat distribuïda.
 
@@ -224,7 +224,7 @@ Amb el Disco 1 desactivat, el Gestor de discos mostra tots els membres del RAID 
 
 ### 19. Verificació: els fitxers segueixen accessibles
 
-Amb un disc fora de línia, comprovem que podem accedir a `R:\Prova-Raid5Astro` i obrir els fitxers sense cap problema. La vista dividida mostra el Gestor de discos (amb errors de redundància) i l'Explorador d'arxius (amb els fitxers accessibles). Això demostra la **tolerància a fallades del RAID 5**.
+Amb un disc fora de línia, comprovem que podem accedir a `R:\Prova-Raid5Ramon` i obrir els fitxers sense cap problema. La vista dividida mostra el Gestor de discos (amb errors de redundància) i l'Explorador d'arxius (amb els fitxers accessibles). Això demostra la **tolerància a fallades del RAID 5**.
 
 <img width="1605" height="786" alt="image" src="https://github.com/user-attachments/assets/dc2dfcb3-9ac3-4aa7-ac93-ded9f3fe086c" />
 
@@ -286,7 +286,7 @@ El Gestor de discos mostra els tres discos amb l'estat **"Volviendo a sincroniza
 
 ### 26. RAID 5 totalment recuperat
 
-Un cop finalitzada la resincronització, els tres discos tornen a mostrar l'estat **Correcto**. El volum RAID5-Astro ha recuperat tota la seva redundància i funciona completament.
+Un cop finalitzada la resincronització, els tres discos tornen a mostrar l'estat **Correcto**. El volum RAID5-Ramon ha recuperat tota la seva redundància i funciona completament.
 
 <img width="1280" height="744" alt="image" src="https://github.com/user-attachments/assets/2942344d-5126-40b3-8621-3ac3cca95cdc" />
 
@@ -294,7 +294,7 @@ Un cop finalitzada la resincronització, els tres discos tornen a mostrar l'esta
 
 ### 27. Verificació final: fitxers intactes
 
-Comprovem que tots els fitxers de `R:\Prova-Raid5Astro` segueixen intactes i accessibles. La vista dividida mostra el Gestor de discos (tots **Correcto**) i l'Explorador d'arxius amb tots els fitxers originals presents i en perfecte estat.
+Comprovem que tots els fitxers de `R:\Prova-Raid5Ramon` segueixen intactes i accessibles. La vista dividida mostra el Gestor de discos (tots **Correcto**) i l'Explorador d'arxius amb tots els fitxers originals presents i en perfecte estat.
 
 <img width="1542" height="796" alt="image" src="https://github.com/user-attachments/assets/3ab5c653-9715-4a03-8e4f-785a8b2635e7" />
 
